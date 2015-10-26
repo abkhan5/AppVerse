@@ -32,6 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppVerse.Desktop.Services.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Services.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -49,14 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameOfLife\CellStateEvaluationService.cs" />
-    <Compile Include="GameOfLife\ICellStateEvaluationService.cs" />
-    <Compile Include="GameOfLife\IStillLifeEvaluationService.cs" />
-    <Compile Include="GameOfLife\LifeRules\ILifeRule.cs" />
     <Compile Include="GameOfLife\LifeRules\LiveLifeRule.cs" />
     <Compile Include="GameOfLife\LifeRules\OverPopulationLifeRule.cs" />
     <Compile Include="GameOfLife\LifeRules\RebirthLifeRule.cs" />
     <Compile Include="GameOfLife\StillLifeEvaluationService.cs" />
     <Compile Include="GameOfLife\LifeRules\UnderPopulationLifeRule.cs" />
+    <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

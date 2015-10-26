@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:AppVerse.Desktop.StatusBar"
+                    
+                    xmlns:views="clr-namespace:AppVerse.Desktop.StatusBar.Views"
+                    xmlns:viewModels="clr-namespace:AppVerse.Desktop.StatusBar.ViewModels"
+                    >
+
+
+    <DataTemplate DataType="{x:Type viewModels:StatusBarViewModel}">
+
+        <views:StatusBarView />
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -54,7 +54,15 @@
     <Compile Include="RegionNames.cs" />
     <Compile Include="Themes\Blue\BlueThemes.cs" />
     <Compile Include="Themes\Red\RedTheme.cs" />
+    <Page Include="Themes\Blue\AppStoryBoards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Blue\TextBlockStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Blue\WindowsStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

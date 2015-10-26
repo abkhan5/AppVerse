@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClasses\BaseModule.cs" />
+    <Compile Include="BaseClasses\BaseShellViewModel.cs" />
     <Compile Include="BaseClasses\BaseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

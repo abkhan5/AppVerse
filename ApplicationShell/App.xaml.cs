@@ -14,5 +14,8 @@ namespace AppVerse.Desktop.ApplicationShell
             AppverseBootStrapper bootstrapper = new AppverseBootStrapper();
             bootstrapper.Run();
         }
+
+        
+
     }
 }

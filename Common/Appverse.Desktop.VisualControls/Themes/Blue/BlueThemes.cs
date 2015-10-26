@@ -9,8 +9,10 @@ namespace Appverse.Desktop.VisualControls.Themes.Blue
 
         private static List<string> DefaultStyles = new List<string>
         {
-                    "TextBlockStyles.xaml",
+                    "AppStoryBoards.xaml",
 
+                    "TextBlockStyles.xaml",
+                    "WindowsStyles.xaml",
         };
 
         public static IEnumerable<string> GetFilePaths()

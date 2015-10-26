@@ -7,16 +7,44 @@
         mc:Ignorable="d"
         xmlns:regions="http://www.codeplex.com/CompositeWPF"
         xmlns:inf="clr-namespace:Appverse.Desktop.VisualControls;assembly=Appverse.Desktop.VisualControls"
-        Title="AppverseShellView" Height="300" Width="300">
+        Title="AppverseShellView" Height="300" Width="300"
+        Style="{DynamicResource WindowsStyle}"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*" />
 
             <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
         </Grid.ColumnDefinitions>
 
-        <ContentControl x:Name="MainRegion"
+        <Grid Grid.Column="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl x:Name="MainRegion" Grid.Row="1" 
                             regions:RegionManager.RegionName="{x:Static inf:RegionNames.MainRegion}" 
+                            VerticalContentAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch" />
+
+            <ContentControl x:Name="StatusRegion" Grid.Row="3"
+                            regions:RegionManager.RegionName="{x:Static inf:RegionNames.StatusRegion}" 
+                            VerticalContentAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch" />
+
+        </Grid>     
+        
+
+
+        <ContentControl x:Name="NavigationRegion" Grid.Column="1"
+                            regions:RegionManager.RegionName="{x:Static inf:RegionNames.NavigationRegion}" 
                             VerticalContentAlignment="Stretch"
                             HorizontalContentAlignment="Stretch" />
     </Grid>

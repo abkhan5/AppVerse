@@ -66,6 +66,11 @@
       <HintPath>..\AppVerseBin\AppVerse.Desktop.Services.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="AppVerse.Desktop.Services.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AppVerseBin\AppVerse.Desktop.Services.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Appverse.Desktop.VisualControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AppVerseBin\Appverse.Desktop.VisualControls.dll</HintPath>

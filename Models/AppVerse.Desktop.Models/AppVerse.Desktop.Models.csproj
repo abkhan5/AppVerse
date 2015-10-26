@@ -32,6 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppVerse.Desktop.AppCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AppVerseBin\AppVerse.Desktop.AppCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Appverse.Desktop.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AppVerseBin\Appverse.Desktop.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Appverse.Desktop.VisualControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AppVerseBin\Appverse.Desktop.VisualControls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\AppVerseBin\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
@@ -78,6 +93,8 @@
     <Compile Include="GameOfLife\CellState.cs" />
     <Compile Include="GameOfLife\Coordinates.cs" />
     <Compile Include="GameOfLife\StillLifeEnum.cs" />
+    <Compile Include="Navigation\NaviagationList.cs" />
+    <Compile Include="Navigation\NaviagationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

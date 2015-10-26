@@ -1,4 +1,7 @@
-﻿namespace AppVerse.Desktop.Services.GameOfLife
+﻿#region Namespace
+using AppVerse.Desktop.Services.Interfaces.GameOfLife;
+#endregion
+namespace AppVerse.Desktop.Services.GameOfLife
 {
     public  class StillLifeEvaluationService: IStillLifeEvaluationService
     {

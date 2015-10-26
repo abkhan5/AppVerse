@@ -1,4 +1,5 @@
 ﻿#region Namespace
+using Appverse.Desktop.Common;
 using Appverse.Desktop.VisualControls;
 using AppVerse.Desktop.AppCommon.BaseClasses;
 using AppVerse.Desktop.GameOfLife.ViewModels;
@@ -12,6 +13,7 @@ namespace AppVerse.Desktop.GameOfLife
     public class GameOfLifeModule : BaseModule
     {
     
+        
         List<string> _resources = new List<string>
                                           {
                                               "pack://application:,,,/AppVerse.Desktop.GameOfLife;component/MappingDictionary.xaml",
@@ -28,7 +30,9 @@ namespace AppVerse.Desktop.GameOfLife
         {
             Extensions.RegisterResources(_resources);
 
-            _regionManager.RegisterViewWithRegion(RegionNames.MainRegion, () => _unityContainer.Resolve<GameOfLifeLandingViewModel>());
+            // _regionManager.RegisterViewWithRegion(RegionNames.MainRegion, () => _unityContainer.Resolve<GameOfLifeLandingViewModel>());
+
+            _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<GameOfLifeLandingViewModel>(), ModuleNames.GameOLife);
         }
     }
 }

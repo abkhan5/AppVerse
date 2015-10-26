@@ -50,9 +50,9 @@
       <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Models.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AppVerse.Desktop.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AppVerse.Desktop.Services.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Services.dll</HintPath>
+      <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Services.Interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Appverse.Desktop.VisualControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

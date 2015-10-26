@@ -4,5 +4,13 @@
                     xmlns:views="clr-namespace:AppVerse.Desktop.ApplicationConfguration.Views"
                     xmlns:viewModels="clr-namespace:AppVerse.Desktop.ApplicationConfguration.ViewModels"            
                     >
-    
+
+
+
+    <DataTemplate DataType="{x:Type viewModels:ApplicationConfigurationViewModel}">
+
+        <views:ApplicationConfigurationView />
+    </DataTemplate>
+
+
 </ResourceDictionary>

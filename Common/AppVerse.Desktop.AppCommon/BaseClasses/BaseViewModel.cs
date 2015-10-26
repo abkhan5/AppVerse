@@ -1,15 +1,18 @@
 ﻿#region Namespace
+using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Unity;
 
 #endregion
 namespace AppVerse.Desktop.AppCommon.BaseClasses
 {
-    public abstract class BaseViewModel:BindableBase
+    public abstract class BaseViewModel : BindableBase
     {
         #region Private memebers
 
         protected IUnityContainer _unityContainer;
+
+        protected ILoggerFacade _logger;
         #endregion
         #region Constructor
         /// <summary>
