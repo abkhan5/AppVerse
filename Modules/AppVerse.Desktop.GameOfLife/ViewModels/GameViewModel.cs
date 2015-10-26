@@ -34,20 +34,11 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             _numberOfColumns = 10;
             _numberOfRows= 10;
             _numberOfGenerations = 100;
-            TriggerGame = new DelegateCommand(ConfigureBoard,CanConfigureBoard);
+            TriggerGame = new DelegateCommand(ConfigureBoard);
             BoardView = _unityContainer.Resolve<BoardViewModel>();
             ConfigureBoard();
         }
 
-        private bool CanConfigureBoard()
-        {
-
-            if (NumberOfColumns>0&&NumberOfRows>0&NumberOfGenerations>0)
-            {
-                return true;
-            }
-            return false;
-        }
 
         private void ConfigureBoard()
         {

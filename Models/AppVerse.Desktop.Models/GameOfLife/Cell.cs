@@ -6,14 +6,14 @@ namespace AppVerse.Desktop.Models.GameOfLife
     {
         #region Private members
 
-        private CellState _cellState;
+        private LifeState _cellState;
 
         #endregion
 
 
         #region Properties
 
-        public CellState State
+        public LifeState State
         {
             get
             {
@@ -29,6 +29,22 @@ namespace AppVerse.Desktop.Models.GameOfLife
         }
 
         public Coordinates CellCordinate { get; set; }
+
+        public void InvertLifeState()
+        {
+            switch (State)
+            {
+                case LifeState.Alive:
+                    State=LifeState.Dead;
+                    break;
+
+                case LifeState.Dead:
+                    State = LifeState.Alive;
+
+                    break;
+
+            }
+        }
 
         #endregion
     }

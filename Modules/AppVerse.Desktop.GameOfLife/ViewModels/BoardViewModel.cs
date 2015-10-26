@@ -2,12 +2,11 @@
 using AppVerse.Desktop.AppCommon.BaseClasses;
 using AppVerse.Desktop.Models.GameOfLife;
 using Microsoft.Practices.Unity;
-using System.Collections.ObjectModel;
 
 #endregion
 namespace AppVerse.Desktop.GameOfLife.ViewModels
 {
-    public   class BoardViewModel : BaseViewModel
+    public class BoardViewModel : BaseViewModel
     {
         #region Private members
 
@@ -22,7 +21,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         /// 
         /// </summary>
         /// <param name="unityContainer"></param>
-        public BoardViewModel(IUnityContainer unityContainer):base(unityContainer)
+        public BoardViewModel(IUnityContainer unityContainer) : base(unityContainer)
         {
 
         }
@@ -38,7 +37,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             OnPropertyChanged("GameBoard");
         }
 
-       
+
 
 
         #endregion

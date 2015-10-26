@@ -7,9 +7,9 @@ namespace AppVerse.Desktop.Services.GameOfLife
 {
     internal  class OverPopulationLifeRule : ILifeRule
     {
-        public CellState EvaluateCell(Cell cell)
+        public LifeState EvaluateCell(Cell cell)
         {
-            return CellState.Alive;
+            return LifeState.Alive;
         }
     }
 }
