@@ -8,8 +8,9 @@
         xmlns:regions="http://www.codeplex.com/CompositeWPF"
         xmlns:inf="clr-namespace:Appverse.Desktop.VisualControls;assembly=Appverse.Desktop.VisualControls"
         Title="AppverseShellView" Height="300" Width="300"
-        Style="{DynamicResource WindowsStyle}"
+        Style="{DynamicResource WindowsStyle}"          
         >
+        
     <Grid>
 
         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >

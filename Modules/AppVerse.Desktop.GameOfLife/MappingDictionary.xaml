@@ -21,7 +21,6 @@
 
 
     <DataTemplate DataType="{x:Type viewModels:BoardViewModel}">
-
         <views:BoardView />
     </DataTemplate>
 
@@ -29,5 +28,47 @@
 
         <views:CellView />
     </DataTemplate>
+
+
+
+
+    <DataTemplate DataType="{x:Type models:Cell}">
+        <Button     Width="40"
+                    Height="30"
+                    Margin="4,4,4,4"
+                    BorderThickness="2"  />
+    </DataTemplate>
+
+
+
+    <DataTemplate DataType="{x:Type models:CellRow}">
+        <ItemsControl ItemsSource="{Binding }" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type models:Board}">
+        <Border BorderThickness="6">
+            <ItemsControl ItemsSource="{Binding Cells}" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Border>
+    </DataTemplate>
+
+
+
 
 </ResourceDictionary>

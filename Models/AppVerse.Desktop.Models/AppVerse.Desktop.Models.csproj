@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="GameOfLife\Board.cs" />
     <Compile Include="GameOfLife\Cell.cs" />
+    <Compile Include="GameOfLife\CellRow.cs" />
     <Compile Include="GameOfLife\CellState.cs" />
     <Compile Include="GameOfLife\Coordinates.cs" />
     <Compile Include="GameOfLife\StillLifeEnum.cs" />

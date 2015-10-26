@@ -28,7 +28,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         public void SetupCells(int rowNumber, int columnNumber)
         {
-            CellModel.CellCordinate = new Coordinates() { Column = columnNumber, Row = rowNumber };
+          //  CellModel.CellCordinate = new Coordinates() { Column = columnNumber, Row = rowNumber };
 
         }
 

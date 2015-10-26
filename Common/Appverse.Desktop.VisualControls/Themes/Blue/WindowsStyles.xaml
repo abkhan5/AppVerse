@@ -5,6 +5,8 @@
 
 
     <Style x:Key="WindowsStyle" TargetType="Window">
+        <Setter Property="WindowState" Value="Maximized" />
+        
         <Style.Triggers>
                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                     <BeginStoryboard Storyboard="{StaticResource InTransition}"/>

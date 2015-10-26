@@ -52,6 +52,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         private void ConfigureBoard()
         {
             BoardView.ConfigureBoard(NumberOfRows, NumberOfColumns, NumberOfGenerations);
+            OnPropertyChanged("BoardView");
         }
 
 

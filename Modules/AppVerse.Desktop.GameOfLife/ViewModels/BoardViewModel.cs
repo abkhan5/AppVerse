@@ -1,5 +1,6 @@
 ﻿#region Namespace
 using AppVerse.Desktop.AppCommon.BaseClasses;
+using AppVerse.Desktop.Models.GameOfLife;
 using Microsoft.Practices.Unity;
 using System.Collections.ObjectModel;
 
@@ -10,8 +11,8 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
     {
         #region Private members
 
+        private Board _gameBoard;
 
-     
 
         #endregion
 
@@ -28,33 +29,30 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         protected override void Initialize()
         {
-            Cells = new ObservableCollection<CellViewModel>();
+            GameBoard = new Board();
         }
 
         internal void ConfigureBoard(int numberOfRows, int numberOfColumns, int numberOfGenerations)
         {
-            Cells.Clear();
-            SetupCells(numberOfRows, numberOfColumns);
+            GameBoard.ConfigureBoard(numberOfRows, numberOfColumns);
+            OnPropertyChanged("GameBoard");
         }
 
-        private void SetupCells(int numberOfRows, int numberOfColumns)
-        {
-            for (int c = 0; c < numberOfColumns; c++)
-            {
-                for (int r = 0; r < numberOfRows; r++)
-                {                    
-                    var cellVm = this._unityContainer.Resolve<CellViewModel>();
-                    cellVm.SetupCells(r, c);
-                    Cells.Add(cellVm);
-                }
-            }
-        }
+       
 
 
         #endregion
 
         #region Properties
-        public ObservableCollection<CellViewModel> Cells { get; set; }
+        public Board GameBoard
+        {
+            get { return _gameBoard; }
+            set
+            {
+                _gameBoard = value;
+                SetProperty(ref _gameBoard, value);
+            }
+        }
         #endregion
     }
 }
