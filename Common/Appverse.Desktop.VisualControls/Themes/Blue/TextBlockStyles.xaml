@@ -8,15 +8,21 @@
 
     <Style x:Key="TextBlockStyle" BasedOn="{x:Null}" TargetType="{x:Type TextBlock}">
         
-        <Setter Property="Background" Value="Blue" />
     </Style>
 
 
     <Style x:Key="HeaderTextBlock" BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontFamily" Value="Bold" />
-        <Setter Property="Background" Value="Blue" />        
+        <Setter Property="FontWeight" Value="ExtraBold" />      
     </Style>
-    
-    
-    
+
+
+    <Style x:Key="HeadingTextBlock" BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+
+    <Style x:Key="MessageTextBlock" BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="Black" />
+    </Style>
+
 </ResourceDictionary>

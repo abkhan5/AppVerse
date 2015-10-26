@@ -30,9 +30,9 @@ namespace AppVerse.Desktop.GameOfLife
         {
             Extensions.RegisterResources(_resources);
 
-            // _regionManager.RegisterViewWithRegion(RegionNames.MainRegion, () => _unityContainer.Resolve<GameOfLifeLandingViewModel>());
 
             _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<GameOfLifeLandingViewModel>(), ModuleNames.GameOLife);
+
         }
     }
 }

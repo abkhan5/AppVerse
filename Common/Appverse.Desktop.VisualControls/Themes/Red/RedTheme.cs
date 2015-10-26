@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Appverse.Desktop.VisualControls.Themes.Red
 {
-    
-     internal static class RedTheme
+
+    internal static class RedTheme
     {
         internal const string FolderPath = "Themes/Red/";
 

@@ -1,12 +1,12 @@
 ﻿#region Namespace
 using AppVerse.Desktop.Services.GameOfLife;
 using AppVerse.Desktop.Services.Interfaces.GameOfLife;
-using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.UnityExtensions;
-using System.Windows;
-using Microsoft.Practices.Unity;
 using AppVerse.Desktop.Services.Interfaces.Navigation;
 using AppVerse.Desktop.Services.Navigation;
+using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.UnityExtensions;
+using Microsoft.Practices.Unity;
+using System.Windows;
 #endregion
 namespace AppVerse.Desktop.ApplicationShell
 {

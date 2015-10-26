@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AppVerse.Desktop.Services.Interfaces.Navigation
+﻿namespace AppVerse.Desktop.Services.Interfaces.Navigation
 {
-   public  interface INavigationService
+    public  interface INavigationService
     {
     }
 }

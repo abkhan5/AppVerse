@@ -2,7 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:AppVerse.Desktop.GameOfLife"
                     xmlns:views="clr-namespace:AppVerse.Desktop.GameOfLife.Views"
-                    xmlns:viewModels="clr-namespace:AppVerse.Desktop.GameOfLife.ViewModels"                
+                    xmlns:viewModels="clr-namespace:AppVerse.Desktop.GameOfLife.ViewModels"    
+                    xmlns:models="clr-namespace:AppVerse.Desktop.Models.GameOfLife;assembly=AppVerse.Desktop.Models"
+                    
                     >
 
 
@@ -21,6 +23,24 @@
     <DataTemplate DataType="{x:Type viewModels:BoardViewModel}">
 
         <views:BoardView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:CellViewModel}">
+
+        <views:CellView />
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="CellMatrixTemplate">
+        <ItemsControl ItemsSource="{Binding}" ItemTemplate="{StaticResource CellTemplate}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </DataTemplate>
 
 

@@ -28,7 +28,7 @@ namespace AppVerse.Desktop.StatusBar
         {
             Extensions.RegisterResources(_resources);
 
-            _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<ViewModels.StatusBarViewModel>(), ModuleNames.StatusBar);
+            _regionManager.Regions[RegionNames.StatusRegion].Add(_unityContainer.Resolve<ViewModels.StatusBarViewModel>(), ModuleNames.StatusBar);
         }
     }
 }
