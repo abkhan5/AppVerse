@@ -7,6 +7,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    
-    
+
+    <ScrollViewer  Style="{DynamicResource ScrollViewerStyle}">
+
+        <Border Style="{DynamicResource BoarderStyle}">        
+    <ItemsControl  ItemsSource="{Binding Cells}" >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+    </Border>
+    </ScrollViewer>
+
+
 </UserControl>

@@ -12,7 +12,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         private int _numberOfRows;
         private int _numberOfGenerations;
         private int _numberOfColumns;
-        private DelegateCommand _configureBoardCommand;
+        private DelegateCommand _triggerGame;
         #endregion
 
 
@@ -34,7 +34,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             _numberOfColumns = 10;
             _numberOfRows= 10;
             _numberOfGenerations = 100;
-            ConfigureBoardCommand = new DelegateCommand(ConfigureBoard,CanConfigureBoard);
+            TriggerGame = new DelegateCommand(ConfigureBoard,CanConfigureBoard);
             BoardView = _unityContainer.Resolve<BoardViewModel>();
             ConfigureBoard();
         }
@@ -59,10 +59,10 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         #endregion
         #region Properties
 
-        public DelegateCommand ConfigureBoardCommand
+        public DelegateCommand TriggerGame
         {
-            get { return _configureBoardCommand; }
-            set { _configureBoardCommand = value; } }
+            get { return _triggerGame; }
+            set { _triggerGame = value; } }
 
         public BoardViewModel BoardView
         {
@@ -85,8 +85,10 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             set
             {
                 SetProperty(ref _numberOfGenerations, value);
+                ConfigureBoard();
+
             }
-        }
+}
 
         public int NumberOfRows
         {
@@ -99,6 +101,8 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             set
             {
                 SetProperty(ref _numberOfRows, value);
+                ConfigureBoard();
+
             }
         }
         public int NumberOfColumns
@@ -112,6 +116,8 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             set
             {
                 SetProperty(ref _numberOfColumns, value);
+                ConfigureBoard();
+
             }
         }
 

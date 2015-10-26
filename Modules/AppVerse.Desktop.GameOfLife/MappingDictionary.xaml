@@ -30,18 +30,4 @@
         <views:CellView />
     </DataTemplate>
 
-
-    <DataTemplate x:Key="CellMatrixTemplate">
-        <ItemsControl ItemsSource="{Binding}" ItemTemplate="{StaticResource CellTemplate}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-    </DataTemplate>
-
-
 </ResourceDictionary>

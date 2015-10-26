@@ -6,5 +6,5 @@
              xmlns:local="clr-namespace:AppVerse.Desktop.GameOfLife.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Button  Command="{Binding ButtonStateCommand}" Style="{DynamicResource CellMatrixTemplate}"/>
+    <Button  Command="{Binding ButtonStateCommand}" Width="20" Height="20" />
 </UserControl>

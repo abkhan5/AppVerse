@@ -26,7 +26,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         #endregion
 
 
-        protected void SetupCells(int rowNumber, int columnNumber)
+        public void SetupCells(int rowNumber, int columnNumber)
         {
             CellModel.CellCordinate = new Coordinates() { Column = columnNumber, Row = rowNumber };
 
@@ -41,7 +41,10 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         public Cell CellModel
         {
             get { return _cellModel; }
-            set { }
+            set
+            {
+                _cellModel = value;
+            }
         }
     }
 }

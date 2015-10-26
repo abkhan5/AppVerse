@@ -21,34 +21,25 @@
            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10" />                
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="10" />
             </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1"  Orientation="Horizontal">
+                
+            <TextBlock Text="Number of Rows" Height="20" Style="{DynamicResource HeadingTextBlock}" />
+            <TextBox Text="{Binding NumberOfRows,UpdateSourceTrigger=PropertyChanged}" Width="50" Height="20"  />
+            <TextBlock Text="Number of Columns"   Height="20" Style="{DynamicResource HeadingTextBlock}" />
+            <TextBox Text="{Binding NumberOfColumns,UpdateSourceTrigger=PropertyChanged}" Width="50" Height="20"                      />
 
-            <TextBlock Text="Number of Rows" Grid.Column="1" Style="{DynamicResource HeadingTextBlock}" />
-            <TextBox Text="{Binding NumberOfRows}"  Grid.Column="3" />
-            <TextBlock Text="Number of Columns"  Grid.Column="5"  Style="{DynamicResource HeadingTextBlock}" />
-            <TextBox Text="{Binding NumberOfColumns}"  Grid.Column="7" />
-            
-            <TextBlock Text="Number of Generations"  Grid.Column="9"  Style="{DynamicResource HeadingTextBlock}" />
-            <TextBox Text="{Binding NumberOfGenerations}"  Grid.Column="11" />
+            <TextBlock Text="Number of Generations"  Height="20" Style="{DynamicResource HeadingTextBlock}" />
+            <TextBox Text="{Binding NumberOfGenerations,UpdateSourceTrigger=PropertyChanged}"  Width="50"
+                      Height="20" />
+            <Button Content="Run Game" Command="{Binding TriggerGame}"  />
 
+            </StackPanel>
 
-            <Button Content="Update" Command="{Binding ConfigureBoardCommand}" Grid.Column="13"  />
         </Grid>
-
-<ContentControl Grid.Row="3" Content="{Binding BoardView}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+     
+        <ContentControl Grid.Row="3" Content="{Binding BoardView}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
     </Grid>
 </UserControl>

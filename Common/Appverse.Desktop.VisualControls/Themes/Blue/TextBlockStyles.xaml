@@ -12,12 +12,15 @@
 
 
     <Style x:Key="HeaderTextBlock" BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontWeight" Value="ExtraBold" />      
+        <Setter Property="FontWeight" Value="ExtraBold" />                    
     </Style>
 
 
-    <Style x:Key="HeadingTextBlock" BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
+    <Style x:Key="HeadingTextBlock" TargetType="{x:Type TextBlock}">
         <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="10" />
+
+
     </Style>
 
 

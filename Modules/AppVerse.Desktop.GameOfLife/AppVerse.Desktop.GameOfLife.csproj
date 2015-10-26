@@ -32,7 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>mazzen.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AppVerse.Desktop.AppCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -209,7 +210,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="mazzen.ico" />
+    <Resource Include="GameOfLife.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
