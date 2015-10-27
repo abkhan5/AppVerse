@@ -38,8 +38,7 @@ namespace AppVerse.Desktop.Models.GameOfLife
 
                 for (int c = 0; c < Columns; c++)
                 {
-                    var cell = new Cell();
-                    cell.CellCordinate = new Coordinates(r, c);
+                    var cell = new Cell(r, c,Rows,Columns);
                     cellRow.Add(cell);
                 }
             }

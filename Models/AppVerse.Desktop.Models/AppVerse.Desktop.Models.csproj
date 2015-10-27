@@ -93,6 +93,7 @@
     <Compile Include="GameOfLife\CellRow.cs" />
     <Compile Include="GameOfLife\CellState.cs" />
     <Compile Include="GameOfLife\Coordinates.cs" />
+    <Compile Include="GameOfLife\NeighbouringCoordinates.cs" />
     <Compile Include="GameOfLife\StillLifeEnum.cs" />
     <Compile Include="Navigation\NaviagationList.cs" />
     <Compile Include="Navigation\NaviagationModel.cs" />
