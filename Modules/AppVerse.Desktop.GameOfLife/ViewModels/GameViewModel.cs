@@ -13,9 +13,14 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         private int _numberOfGenerations;
         private int _numberOfColumns;
         private DelegateCommand _triggerGame;
+        private bool _canConfigureGrid;
+        private string _gameStateMessage;
         #endregion
 
-
+        #region Constant
+        public const string StartSimulationMessage = "Start simulation";
+        public const string StopSimulationMessage = "Stop simulation";
+        #endregion
 
         #region Constructor
         /// <summary>
@@ -34,7 +39,9 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             _numberOfColumns = 10;
             _numberOfRows= 10;
             _numberOfGenerations = 100;
-            TriggerGame = new DelegateCommand(ConfigureBoard);
+            _canConfigureGrid = true;
+            _gameStateMessage = StartSimulationMessage;
+            TriggerGame = new DelegateCommand(TriggerGameAction);
             BoardView = _unityContainer.Resolve<BoardViewModel>();
             ConfigureBoard();
         }
@@ -43,10 +50,21 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         private void ConfigureBoard()
         {
             BoardView.ConfigureBoard(NumberOfRows, NumberOfColumns, NumberOfGenerations);
-            OnPropertyChanged("BoardView");
         }
 
-
+        private void TriggerGameAction()
+        {
+            if (CanConfigureGrid)
+            {
+                CanConfigureGrid = false;
+                GameStateMessage = StopSimulationMessage;
+            }
+            else
+            {
+                CanConfigureGrid = true;
+                GameStateMessage = StartSimulationMessage;
+            }
+        }
 
         #endregion
         #region Properties
@@ -66,6 +84,34 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         }
 
 
+        public bool CanConfigureGrid
+        {
+            get
+            {
+
+                return _canConfigureGrid;
+            }
+
+            set
+            {
+                SetProperty(ref _canConfigureGrid, value);
+
+            }
+        }
+        public string GameStateMessage
+        {
+            get
+            {
+
+                return _gameStateMessage;
+            }
+
+            set
+            {
+                SetProperty(ref _gameStateMessage, value);
+
+            }
+        }
         public int NumberOfGenerations
         {
             get
@@ -80,7 +126,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
                 ConfigureBoard();
 
             }
-}
+        }
 
         public int NumberOfRows
         {

@@ -26,6 +26,7 @@
 
     <Style x:Key="MessageTextBlock" BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
         <Setter Property="FontWeight" Value="Black" />
+        <Setter Property="TextAlignment" Value="Center" />
     </Style>
 
 </ResourceDictionary>

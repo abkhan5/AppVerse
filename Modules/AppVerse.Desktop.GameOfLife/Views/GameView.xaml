@@ -22,19 +22,33 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="10" />
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1"  Orientation="Horizontal">
-                
-            <TextBlock Text="Number of Rows" Height="20" Style="{DynamicResource HeadingTextBlock}" />
-            <TextBox Text="{Binding NumberOfRows,UpdateSourceTrigger=PropertyChanged}" Width="50" Height="20"  />
-            <TextBlock Text="Number of Columns"   Height="20" Style="{DynamicResource HeadingTextBlock}" />
-            <TextBox Text="{Binding NumberOfColumns,UpdateSourceTrigger=PropertyChanged}" Width="50" Height="20"                      />
 
-            <TextBlock Text="Number of Generations"  Height="20" Style="{DynamicResource HeadingTextBlock}" />
-            <TextBox Text="{Binding NumberOfGenerations,UpdateSourceTrigger=PropertyChanged}"  Width="50"
-                      Height="20" />
-            <Button Content="Run Game" Command="{Binding TriggerGame}"  />
+                
+            <StackPanel Grid.Column="1" IsEnabled="{Binding CanConfigureGrid}"  Orientation="Horizontal">
+                <TextBlock Text="Number of Rows" MinWidth="10" Style="{DynamicResource HeadingTextBlock}" />
+                <TextBox Text="{Binding NumberOfRows,UpdateSourceTrigger=PropertyChanged}" 
+                         MinWidth="50" Height="20"  />
+                
+                <TextBlock Text="Number of Columns"  Style="{DynamicResource HeadingTextBlock}" />
+                <TextBox Text="{Binding NumberOfColumns,UpdateSourceTrigger=PropertyChanged}"   
+                         
+                          MinWidth="50" Height="20"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Grid.Column="3" >
+                <TextBlock Text="Number of Generations"  Style="{DynamicResource HeadingTextBlock}" />
+                <TextBox IsEnabled="{Binding CanConfigureGrid}"
+                         Text="{Binding NumberOfGenerations,UpdateSourceTrigger=PropertyChanged}" 
+                         MinWidth="50"
+                         Height="20" />
+                <TextBlock Width="20" />
+                <Button Content="{Binding GameStateMessage}" Command="{Binding TriggerGame}"     MinWidth="100"
+                         Height="20" />
 
             </StackPanel>
 

@@ -9,6 +9,7 @@ namespace Appverse.Desktop.VisualControls.Themes.Blue
 
         private static List<string> DefaultStyles = new List<string>
         {
+            "TextBoxStyles.xaml",
             "ButtonStyles.xaml",
             "ScrollBarStyles.xaml",
                     "AppStoryBoards.xaml",
