@@ -45,7 +45,7 @@ namespace AppVerse.Desktop.Models.GameOfLife
 
             }
         }
-
+        
         #endregion
     }
 }
