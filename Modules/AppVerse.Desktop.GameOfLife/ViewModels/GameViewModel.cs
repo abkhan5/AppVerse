@@ -1,6 +1,7 @@
 ﻿using AppVerse.Desktop.AppCommon.BaseClasses;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Unity;
+using System.Threading.Tasks;
 
 namespace AppVerse.Desktop.GameOfLife.ViewModels
 {
@@ -58,14 +59,25 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             {
                 CanConfigureGrid = false;
                 GameStateMessage = StopSimulationMessage;
+                BoardView.RunGame();
+
+
             }
             else
             {
                 CanConfigureGrid = true;
                 GameStateMessage = StartSimulationMessage;
+                BoardView.StopGame();
+
             }
+
         }
 
+
+        private  void RunGame()
+        {
+
+        }
         #endregion
         #region Properties
 

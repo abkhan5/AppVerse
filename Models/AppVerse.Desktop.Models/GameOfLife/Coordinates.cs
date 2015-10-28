@@ -9,5 +9,17 @@
         }
         public int Row { get; set; }
         public int Column { get; set; }
+
+        public static bool operator ==(Coordinates coordinate, Cell cell)
+        {
+            return cell.CellCordinate.Row == coordinate.Row && cell.CellCordinate.Column == coordinate.Column;
+
+        }
+
+
+        public static bool operator !=(Coordinates coordinate, Cell cell)
+        {
+            return !(coordinate == cell);
+        }
     }
 }

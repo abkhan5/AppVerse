@@ -10,9 +10,16 @@
 
     
         <Border Style="{DynamicResource BoarderStyle}">
+        <StackPanel Orientation="Vertical" >
+          <TextBlock Text="{Binding GenerationProgress,Mode=OneWay,IsAsync=True}"
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center" 
+                     TextAlignment="Center"/>
+            
         <ScrollViewer  Style="{DynamicResource FavsScrollViewer}" >
-            <ContentControl Content="{Binding GameBoard}" />
+            <ContentControl IsEnabled="{Binding IsBoardEnabled}" Content="{Binding GameBoard}" />
         </ScrollViewer>
+        </StackPanel>
 
     </Border>
    

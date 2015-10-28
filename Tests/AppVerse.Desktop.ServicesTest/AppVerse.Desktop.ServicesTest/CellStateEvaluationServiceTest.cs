@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AppVerse.Desktop.ServicesTest
 {
     [TestClass]
-    public class UnitTest1
+    public class CellStateEvaluationServiceTest
     {
         [TestMethod]
         public void TestMethod1()

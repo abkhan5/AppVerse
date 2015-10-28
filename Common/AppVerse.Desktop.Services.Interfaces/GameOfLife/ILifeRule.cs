@@ -4,6 +4,6 @@ namespace AppVerse.Desktop.Services.Interfaces.GameOfLife
 {
     public interface ILifeRule
     {
-        LifeState EvaluateCell(Cell cell);
+        void EvaluateCell(Cell cell);
     }
 }

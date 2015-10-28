@@ -24,8 +24,21 @@ namespace AppVerse.Desktop.Models.GameOfLife
             Rows = numberOfRows;
             Columns = numberOfColumns;
             Cells.Clear();
-            SetupBoard();
             GenerationNumber = 0;
+            SetupBoard();
+            RelateCellNeighbours();
+        }
+
+        private void RelateCellNeighbours()
+        {
+            var cells = Cells.CellsInBoard();
+            var cellNeighbour = Cells.CellsInBoard();
+
+            foreach (var cellItem in cells)
+            {
+                cellItem.SetupNeighbours(cellNeighbour);
+            }
+
         }
 
 
@@ -42,7 +55,7 @@ namespace AppVerse.Desktop.Models.GameOfLife
                     cellRow.Add(cell);
                 }
             }
-        }
+        }        
         public void Clear()
         {
 
