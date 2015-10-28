@@ -74,7 +74,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         internal void StopGame()
         {
-            
+            _isGameCancelled = true;
         }
 
         public Board GameBoard
@@ -99,7 +99,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         public void RunGame()
         {
             _gameTask = new Task(RunGameInTask);
-
+            _isGameCancelled = false;
             IsBoardEnabled = false;
             UpdateGenerationMessage(1);
             _gameTask.Start();
