@@ -1,16 +1,22 @@
-﻿#region Namespace
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+#region Namespace
 using AppVerse.Desktop.AppCommon.BaseClasses;
+using AppVerse.Desktop.ApplicationEvents.GameOfLife;
 using AppVerse.Desktop.Models.GameOfLife;
 using AppVerse.Desktop.Services.Interfaces.GameOfLife;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Unity;
 using System.Threading;
 using System.Threading.Tasks;
-using System;
 
 #endregion
+
 namespace AppVerse.Desktop.GameOfLife.ViewModels
 {
-    public class BoardViewModel : BaseViewModel
+  public   class RunningGameViewModel : BaseViewModel
     {
 
         #region Constants
@@ -20,20 +26,25 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         #region Private members
         private bool _isBoardEnabled;
-        private string  _generationProgress;
+        private string _generationProgress;
         private Board _gameBoard;
-        private int _numberOfGenerations;
-        ICellStateEvaluationService _cellStateService;
-        bool  _isGameCancelled;
+        private ICellStateEvaluationService _cellStateService;
+        private bool _isGameCancelled;
+        private SubscriptionToken _gameStartSubsriptionToken;
+        private SubscriptionToken _gameStopSubsriptionToken;
+        private Task _gameTask;
+        private CancellationToken _cancellationToken;
+        private GameHistory _gameHistory;
         #endregion
 
 
         #region Constructor
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="unityContainer"></param>
-        public BoardViewModel(IUnityContainer unityContainer) : base(unityContainer)
+        public RunningGameViewModel(IUnityContainer unityContainer) : base(unityContainer)
         {
 
         }
@@ -42,20 +53,12 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         {
             _isGameCancelled = false;
             _isBoardEnabled = true;
-            GameBoard = new Board();
+            _gameStartSubsriptionToken = AppEventAggregator.GetEvent<GameStartEvent>().Subscribe(GameStartEventHandler);
+            _gameStopSubsriptionToken = AppEventAggregator.GetEvent<GameStopEvent>().Subscribe(GameStopEventHandler);
             _cellStateService = _unityContainer.Resolve<ICellStateEvaluationService>();
-            _gameTask = new Task(RunGameInTask);
+            _cancellationToken = new CancellationToken();
+            _gameTask = new Task(RunGameInTask, _cancellationToken);
         }
-
-        internal void ConfigureBoard(int numberOfRows, int numberOfColumns, int numberOfGenerations)
-        {
-            UpdateGenerationMessage(0);
-            _numberOfGenerations = numberOfGenerations;
-            GameBoard.ConfigureBoard(numberOfRows, numberOfColumns);
-            OnPropertyChanged("GameBoard");
-        }
-
-
 
 
         #endregion
@@ -70,11 +73,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
                 _isBoardEnabled = value;
                 SetProperty(ref _isBoardEnabled, value);
             }
-        }
-
-        internal void StopGame()
-        {
-            _isGameCancelled = true;
         }
 
         public Board GameBoard
@@ -95,7 +93,41 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
                 SetProperty(ref _generationProgress, value);
             }
         }
-        Task _gameTask;
+
+        #endregion
+
+
+        #region Methods
+
+        internal void StopGame()
+        {
+            _isGameCancelled = true;
+        }
+
+
+        private void GameStartEventHandler(GameHistory gameHistory)
+        {
+            _gameHistory = gameHistory;
+            ConfigureBoard();
+            RunGame();
+        }
+
+        private void GameStopEventHandler(GameHistory gameHistory)
+        {
+            _isGameCancelled = true;
+        }
+
+
+        private void ConfigureBoard()
+        {
+            UpdateGenerationMessage(0);
+            GameBoard = _gameHistory.GameBoard;
+            var numberOfRows = _gameHistory.TotalRows;
+            var numberOfColumns = _gameHistory.ToatlColumns;
+            GameBoard = _gameHistory.GameBoard;
+            GameBoard.ConfigureBoard(numberOfRows, numberOfColumns);
+        }
+
         public void RunGame()
         {
             _gameTask = new Task(RunGameInTask);
@@ -107,25 +139,26 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         private void UpdateGenerationMessage(int generationNumber)
         {
-            if (generationNumber==0)
+            if (generationNumber == 0)
             {
                 return;
             }
-           GenerationProgress = string.Format(GenerationMessageFormat, generationNumber, _numberOfGenerations);
+            GenerationProgress = string.Format(GenerationMessageFormat, generationNumber, _gameHistory.TotalGenerations);
 
         }
 
         private void RunGameInTask()
         {
-
             try
             {
-                for (int i = 0; i < _numberOfGenerations&& !_isGameCancelled; i++)
-                {                    
+                GameBoard.RelateCellNeighbours();
+                for (int i = 0; i < _gameHistory.TotalGenerations && !_isGameCancelled; i++)
+                {
                     _cellStateService.EvaluateBoardForNextGeneration(GameBoard);
-                    UpdateGenerationMessage(i+1);
+                    UpdateGenerationMessage(i + 1);
                     Thread.Sleep(200);
                 }
+                AppEventAggregator.GetEvent<GameCompleteEvent>().Publish(_gameHistory);
             }
             catch (System.Exception)
             {

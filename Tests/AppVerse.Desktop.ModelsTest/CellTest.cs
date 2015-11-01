@@ -1,6 +1,5 @@
-﻿using System;
+﻿using AppVerse.Desktop.Models.GameOfLife;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AppVerse.Desktop.Models.GameOfLife;
 
 namespace AppVerse.Desktop.ModelsTest
 {

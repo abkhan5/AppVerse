@@ -1,12 +1,13 @@
-﻿using Microsoft.Practices.Prism.Mvvm;
+﻿using AppVerse.Desktop.AppCommon.BaseClasses;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace AppVerse.Desktop.Models.GameOfLife
 {
-    public class Cell : BindableBase
+    public class Cell : DataModelBase
     {
         #region Private members
+        private string _cellInfo;
         int _lastRow, _lastColumn;
         private LifeState _cellState;
 
@@ -115,6 +116,18 @@ namespace AppVerse.Desktop.Models.GameOfLife
 
 
         public List<Cell> NeighbouringCells { get; private set; }
+
+        public string CellInfo
+        {
+            get
+            {
+                return "Cell " + CellCordinate + " is " + State.ToString();
+            }
+            set
+            {
+            }
+        }
+
         #endregion
     }
 }

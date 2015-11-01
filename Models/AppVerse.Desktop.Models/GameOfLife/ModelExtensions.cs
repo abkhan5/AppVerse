@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AppVerse.Desktop.AppCommon.BaseClasses;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AppVerse.Desktop.Models.GameOfLife
@@ -14,6 +15,12 @@ namespace AppVerse.Desktop.Models.GameOfLife
         public static IEnumerable<Cell> CellsInBoard(this Board board)
         {
             return board.Cells.SelectMany(cellRowItem => cellRowItem.Select(cellItem => cellItem));
+        }
+
+
+        public static TDataModelBase GetCopy<TDataModelBase>(this TDataModelBase board) where TDataModelBase: DataModelBase
+        {
+            return AutoMapper.Mapper.DynamicMap<TDataModelBase>(board);
         }
     }
 }

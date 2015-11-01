@@ -21,5 +21,10 @@
         {
             return !(coordinate == cell);
         }
+
+        public override string ToString()
+        {
+            return "[" + (Row + 1) + "," + (Column + 1) + "]";
+        }
     }
 }

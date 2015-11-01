@@ -3,11 +3,11 @@
 namespace AppVerse.Desktop.GameOfLife.Views
 {
     /// <summary>
-    /// Interaction logic for GameOfLifeLandingView.xaml
+    /// Interaction logic for GameConfiguration.xaml
     /// </summary>
-    public partial class GameOfLifeLandingView : UserControl
+    public partial class GameConfiguration : UserControl
     {
-        public GameOfLifeLandingView()
+        public GameConfiguration()
         {
             InitializeComponent();
         }

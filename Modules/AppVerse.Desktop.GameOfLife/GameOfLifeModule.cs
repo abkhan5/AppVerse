@@ -12,8 +12,8 @@ namespace AppVerse.Desktop.GameOfLife
 {
     public class GameOfLifeModule : BaseModule
     {
-    
-        
+
+
         List<string> _resources = new List<string>
                                           {
                                               "pack://application:,,,/AppVerse.Desktop.GameOfLife;component/MappingDictionary.xaml",
@@ -24,14 +24,13 @@ namespace AppVerse.Desktop.GameOfLife
 
         }
 
-       
+
 
         public override void RegisterResources()
         {
             Extensions.RegisterResources(_resources);
 
-
-            _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<GameOfLifeLandingViewModel>(), ModuleNames.GameOLife);
+            _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<GameOfLifeShellViewModel>(), ModuleNames.GameOLife);
 
         }
     }

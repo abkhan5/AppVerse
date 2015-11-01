@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="ApplicationConfiguration.cs" />
     <Compile Include="AppThemes.cs" />
+    <Compile Include="Converters\BoolToVisibillityConverter.cs" />
+    <Compile Include="Converters\VisibilityToStarHeightConverter.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="RegionNames.cs" />
     <Compile Include="Themes\Blue\BlueThemes.cs" />
@@ -111,9 +113,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AppVerse.Desktop.ServicesTest")]
+[assembly: AssemblyTitle("AppVerse.Desktop.ApplicationEvents")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AppVerse.Desktop.ServicesTest")]
+[assembly: AssemblyProduct("AppVerse.Desktop.ApplicationEvents")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ccdd9bcb-38b7-4852-8c89-57c2c7f96cd7")]
+[assembly: Guid("c5a1dcb3-08f1-4c93-9ed2-b65737d0189b")]
 
 // Version information for an assembly consists of the following four values:
 //

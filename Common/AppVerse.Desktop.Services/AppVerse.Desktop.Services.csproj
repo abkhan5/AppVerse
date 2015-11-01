@@ -32,6 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppVerse.Desktop.AppCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AppVerseBin\AppVerse.Desktop.AppCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="AppVerse.Desktop.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Models.dll</HintPath>
@@ -40,6 +45,16 @@
     <Reference Include="AppVerse.Desktop.Services.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Services.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AppVerseBin\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Code\AppVerseDesktop\AppVerse\AppVerseBin\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

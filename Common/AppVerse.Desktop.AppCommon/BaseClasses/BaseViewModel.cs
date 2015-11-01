@@ -1,6 +1,7 @@
 ﻿#region Namespace
 using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Unity;
 
 #endregion
@@ -11,9 +12,11 @@ namespace AppVerse.Desktop.AppCommon.BaseClasses
         #region Private memebers
 
         protected IUnityContainer _unityContainer;
-
+        private IEventAggregator _evenAggregator;
         protected ILoggerFacade _logger;
         #endregion
+
+
         #region Constructor
         /// <summary>
         /// 
@@ -26,6 +29,15 @@ namespace AppVerse.Desktop.AppCommon.BaseClasses
         }
         #endregion
 
+        #region Properties
+        public IEventAggregator AppEventAggregator
+        {
+            get
+            {
+                return _evenAggregator ?? (_evenAggregator = _unityContainer.Resolve<IEventAggregator>());
+            }
+        }
+        #endregion
 
         #region methods
         protected abstract void Initialize();

@@ -3,9 +3,10 @@ using AppVerse.Desktop.AppCommon.BaseClasses;
 using Microsoft.Practices.Unity;
 
 #endregion
+
 namespace AppVerse.Desktop.GameOfLife.ViewModels
 {
-    public class GameOfLifeLandingViewModel : BaseViewModel
+    class GameOfLifeInformationViewModel : BaseViewModel
     {
 
         #region Private memebers
@@ -18,7 +19,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         /// 
         /// </summary>
         /// <param name="unityContainer"></param>
-        public GameOfLifeLandingViewModel(IUnityContainer unityContainer):base(unityContainer)
+        public GameOfLifeInformationViewModel(IUnityContainer unityContainer):base(unityContainer)
         {
 
         }
@@ -35,7 +36,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         {
             Title = "Conway's Game of Life";
             OverView = "The game is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves or, for advanced players, by creating patterns with particular properties.";
-            GameView = _unityContainer.Resolve<GameViewModel>();
         }
 
         #endregion
@@ -45,9 +45,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
 
         public string OverView { get; set; }
-
-
-        public BaseViewModel GameView { get; set; }
+        
         #endregion
     }
 }

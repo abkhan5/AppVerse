@@ -47,6 +47,11 @@
       <HintPath>..\..\AppVerseBin\Appverse.Desktop.VisualControls.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AppVerseBin\AutoMapper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\AppVerseBin\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
@@ -93,6 +98,7 @@
     <Compile Include="GameOfLife\CellRow.cs" />
     <Compile Include="GameOfLife\CellState.cs" />
     <Compile Include="GameOfLife\Coordinates.cs" />
+    <Compile Include="GameOfLife\GameHistory.cs" />
     <Compile Include="GameOfLife\NeighbouringCoordinates.cs" />
     <Compile Include="GameOfLife\StillLifeEnum.cs" />
     <Compile Include="GameOfLife\ModelExtensions.cs" />

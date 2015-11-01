@@ -6,27 +6,33 @@
                     xmlns:models="clr-namespace:AppVerse.Desktop.Models.GameOfLife;assembly=AppVerse.Desktop.Models"   
                     xmlns:conv="clr-namespace:AppVerse.Desktop.GameOfLife.Converters"
                     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-      
-
-
-                    >
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions">
+    
+    
     
     <conv:LifeStateToStyleConverter x:Key="lifeStateConverter" />
 
-    <DataTemplate DataType="{x:Type viewModels:GameOfLifeLandingViewModel}">
-        
-        <views:GameOfLifeLandingView />
-    </DataTemplate>
-    
-    <DataTemplate DataType="{x:Type viewModels:GameViewModel}">
-        <views:GameView />
+
+    <DataTemplate DataType="{x:Type viewModels:GameConfigurationViewModel}">
+        <views:GameConfiguration />
     </DataTemplate>
 
 
+    <DataTemplate DataType="{x:Type viewModels:GameDetailsViewModel}">
+        <views:GameDetailsView />
+    </DataTemplate>
 
-    <DataTemplate DataType="{x:Type viewModels:BoardViewModel}">
-        <views:BoardView />
+    <DataTemplate DataType="{x:Type viewModels:GameOfLifeInformationViewModel}">
+        <views:GameOfLifeInformationView />
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type viewModels:GameOfLifeShellViewModel}">
+        <views:GameOfLifeShellView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:RunningGameViewModel}">
+        <views:RunningGameView />
     </DataTemplate>
 
 
@@ -35,7 +41,8 @@
         <Button     Width="40"
                     Height="30"
                     Margin="4,4,4,4"
-                    BorderThickness="2"                       
+                    BorderThickness="2"
+                    ToolTip="{Binding Path=CellInfo,Mode=TwoWay}"
                     Style="{Binding Path=State, Mode=TwoWay,
                                     Converter={StaticResource lifeStateConverter}}">
             <i:Interaction.Triggers>
@@ -43,8 +50,7 @@
                     <ei:CallMethodAction TargetObject="{Binding}" MethodName="InvertLifeState"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
-        </Button>
-        
+        </Button>        
     </DataTemplate>
 
 
@@ -63,20 +69,32 @@
 
 
     <DataTemplate DataType="{x:Type models:Board}">
-        <Border BorderThickness="6">
-            <ItemsControl ItemsSource="{Binding Cells}" >
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel HorizontalAlignment="Center"
+        <Border Style="{DynamicResource BoarderStyle}">
+            <ScrollViewer  VirtualizingPanel.IsVirtualizing="True" 
+                           VirtualizingPanel.VirtualizationMode="Recycling"
+                           VirtualizingPanel.ScrollUnit="Pixel"
+                           VirtualizingPanel.IsContainerVirtualizable="True"                           
+                           Style="{DynamicResource FavsScrollViewer}" >
+                <ItemsControl  ItemsSource="{Binding Cells}" >
+                    <ItemsControl.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ItemsControl.RenderTransform>
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Orientation="Vertical" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            </ItemsControl>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
         </Border>
     </DataTemplate>
-
-
-
 
 </ResourceDictionary>

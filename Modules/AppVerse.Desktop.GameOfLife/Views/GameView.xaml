@@ -5,55 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AppVerse.Desktop.GameOfLife.Views"
              mc:Ignorable="d" 
+             xmlns:conv="clr-namespace:Appverse.Desktop.VisualControls.Converters;assembly=Appverse.Desktop.VisualControls"
+                 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
 
+    <UserControl.Resources>
+        <conv:BoolToVisibillityConverter x:Key="lifeStateConverter" />
+        <conv:VisibilityToStarHeightConverter x:Key="VisibilityToStarHeightConverter" />
+    </UserControl.Resources>
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions >
-            <RowDefinition Height="10" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="10" />
-            <RowDefinition Height="100*" />
-            <RowDefinition Height="10" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="{Binding Visibility, ElementName=GameConfigContent, Converter={StaticResource VisibilityToStarHeightConverter}}" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="{Binding Visibility, ElementName=GameBoardContent, Converter={StaticResource VisibilityToStarHeightConverter}}" />
+            <RowDefinition Height="2" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <ContentControl x:Name="GameConfigContent"
+                        Grid.Row="1" 
+                        Content="{Binding GameConfiguration,Mode=TwoWay}" 
+                        Visibility="{Binding IsGameConfigurable,Mode=TwoWay,Converter={StaticResource lifeStateConverter}}"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"/>
 
-           
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="20" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="10" />
-            </Grid.ColumnDefinitions>
-
-                
-            <StackPanel Grid.Column="1" IsEnabled="{Binding CanConfigureGrid}"  Orientation="Horizontal">
-                <TextBlock Text="Number of Rows" MinWidth="10" Style="{DynamicResource HeadingTextBlock}" />
-                <TextBox Text="{Binding NumberOfRows,UpdateSourceTrigger=PropertyChanged}" 
-                         MinWidth="50" Height="20"  />
-                
-                <TextBlock Text="Number of Columns"  Style="{DynamicResource HeadingTextBlock}" />
-                <TextBox Text="{Binding NumberOfColumns,UpdateSourceTrigger=PropertyChanged}"   
-                         
-                          MinWidth="50" Height="20"/>
-            </StackPanel>
-
-
-            <StackPanel Orientation="Horizontal" Grid.Column="3" >
-                <TextBlock Text="Number of Generations"  Style="{DynamicResource HeadingTextBlock}" />
-                <TextBox IsEnabled="{Binding CanConfigureGrid}"
-                         Text="{Binding NumberOfGenerations,UpdateSourceTrigger=PropertyChanged}" 
-                         MinWidth="50"
-                         Height="20" />
-                <TextBlock Width="20" />
-                <Button Content="{Binding GameStateMessage}" Command="{Binding TriggerGame}"     MinWidth="100"
-                         Height="20" />
-
-            </StackPanel>
-
-        </Grid>
-     
-        <ContentControl Grid.Row="3" Content="{Binding BoardView}"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <ContentControl x:Name="GameBoardContent" 
+                        Grid.Row="3"
+                        Content="{Binding BoardView,Mode=TwoWay}" 
+                        Visibility="{Binding IsGameBoardVisisble,Mode=TwoWay,Converter={StaticResource lifeStateConverter}}"
+                        VerticalAlignment="Stretch" 
+                        HorizontalAlignment="Stretch"/>
+   
     </Grid>
 </UserControl>

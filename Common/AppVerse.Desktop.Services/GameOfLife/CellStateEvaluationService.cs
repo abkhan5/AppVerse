@@ -3,7 +3,6 @@ using AppVerse.Desktop.Models.GameOfLife;
 using AppVerse.Desktop.Services.Interfaces.GameOfLife;
 using Microsoft.Practices.Unity;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 #endregion
 namespace AppVerse.Desktop.Services.GameOfLife
@@ -42,7 +41,6 @@ namespace AppVerse.Desktop.Services.GameOfLife
             {
                 try
                 {
-
                     cellItem.State = cellItem.CalculatedState;
                 }
                 catch (System.Exception)
@@ -64,7 +62,7 @@ namespace AppVerse.Desktop.Services.GameOfLife
                         rule.EvaluateCell(cellItem);
                     }
                 }
-                catch (System.Exception)
+                catch (System.Exception ex)
                 {
 
                     throw;

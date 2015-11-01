@@ -1,8 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿#region Namespace
+using AppVerse.Desktop.AppCommon.BaseClasses;
+using System.Collections.ObjectModel;
 
+#endregion
 namespace AppVerse.Desktop.Models.GameOfLife
 {
-    public class Board
+    public class Board : DataModelBase
     {
         public Board()
         {
@@ -18,6 +21,7 @@ namespace AppVerse.Desktop.Models.GameOfLife
 
         public int GenerationNumber { get; set; }
 
+
         public void ConfigureBoard(int numberOfRows, int numberOfColumns)
         {
             Clear();
@@ -26,10 +30,9 @@ namespace AppVerse.Desktop.Models.GameOfLife
             Cells.Clear();
             GenerationNumber = 0;
             SetupBoard();
-            RelateCellNeighbours();
         }
 
-        private void RelateCellNeighbours()
+        public void RelateCellNeighbours()
         {
             var cells = Cells.CellsInBoard();
             var cellNeighbour = Cells.CellsInBoard();
@@ -51,11 +54,11 @@ namespace AppVerse.Desktop.Models.GameOfLife
 
                 for (int c = 0; c < Columns; c++)
                 {
-                    var cell = new Cell(r, c,Rows,Columns);
+                    var cell = new Cell(r, c, Rows, Columns);
                     cellRow.Add(cell);
                 }
             }
-        }        
+        }
         public void Clear()
         {
 
