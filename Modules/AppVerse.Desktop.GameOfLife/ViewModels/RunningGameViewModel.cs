@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-#region Namespace
+﻿#region Namespace
 using AppVerse.Desktop.AppCommon.BaseClasses;
 using AppVerse.Desktop.ApplicationEvents.GameOfLife;
 using AppVerse.Desktop.Models.GameOfLife;
@@ -25,7 +21,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
 
         #region Private members
-        private bool _isBoardEnabled;
         private string _generationProgress;
         private Board _gameBoard;
         private ICellStateEvaluationService _cellStateService;
@@ -52,7 +47,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         protected override void Initialize()
         {
             _isGameCancelled = false;
-            _isBoardEnabled = true;
             _gameStartSubsriptionToken = AppEventAggregator.GetEvent<GameStartEvent>().Subscribe(GameStartEventHandler);
             _gameStopSubsriptionToken = AppEventAggregator.GetEvent<GameStopEvent>().Subscribe(GameStopEventHandler);
             _cellStateService = _unityContainer.Resolve<ICellStateEvaluationService>();
@@ -65,16 +59,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         #region Properties
 
-        public bool IsBoardEnabled
-        {
-            get { return _isBoardEnabled; }
-            set
-            {
-                _isBoardEnabled = value;
-                SetProperty(ref _isBoardEnabled, value);
-            }
-        }
-
+        
         public Board GameBoard
         {
             get { return _gameBoard; }
@@ -102,13 +87,14 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         internal void StopGame()
         {
             _isGameCancelled = true;
+            
         }
 
 
         private void GameStartEventHandler(GameHistory gameHistory)
         {
             _gameHistory = gameHistory;
-            ConfigureBoard();
+            GameBoard = _gameHistory.GameBoard;
             RunGame();
         }
 
@@ -118,22 +104,12 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         }
 
 
-        private void ConfigureBoard()
-        {
-            UpdateGenerationMessage(0);
-            GameBoard = _gameHistory.GameBoard;
-            var numberOfRows = _gameHistory.TotalRows;
-            var numberOfColumns = _gameHistory.ToatlColumns;
-            GameBoard = _gameHistory.GameBoard;
-            GameBoard.ConfigureBoard(numberOfRows, numberOfColumns);
-        }
 
         public void RunGame()
         {
             _gameTask = new Task(RunGameInTask);
             _isGameCancelled = false;
-            IsBoardEnabled = false;
-            UpdateGenerationMessage(1);
+            _gameBoard.RelateCellNeighbours();
             _gameTask.Start();
         }
 
@@ -151,10 +127,9 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         {
             try
             {
-                GameBoard.RelateCellNeighbours();
                 for (int i = 0; i < _gameHistory.TotalGenerations && !_isGameCancelled; i++)
                 {
-                    _cellStateService.EvaluateBoardForNextGeneration(GameBoard);
+                    _cellStateService.EvaluateBoardForNextGeneration(_gameBoard);
                     UpdateGenerationMessage(i + 1);
                     Thread.Sleep(200);
                 }

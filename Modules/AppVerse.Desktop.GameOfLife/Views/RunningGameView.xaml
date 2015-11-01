@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:AppVerse.Desktop.GameOfLife.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Border IsEnabled="False" Style="{DynamicResource BoarderStyle}">
+    <Border Style="{DynamicResource BoarderStyle}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="2"/>

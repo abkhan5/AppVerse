@@ -15,11 +15,8 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
     public class GameConfigurationViewModel : BaseViewModel
     {
         #region Private members
-        private GameHistory _gameHistory;
+        public GameHistory _gameHistory;
         private Board  _gameBoardLayout;
-        private int? _numberOfRows;
-        private int? _numberOfGenerations;
-        private int? _numberOfColumns;
         private DelegateCommand _triggerGame;
         private bool _canConfigureGrid;
         private string _gameStateMessage;
@@ -47,12 +44,13 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         protected override void Initialize()
         {
-            _numberOfColumns = 30;
-            _numberOfRows = 20;
-            _numberOfGenerations = 50;
+            _gameHistory = new GameHistory();
+
+            _gameHistory.ToatlColumns= 30;
+            _gameHistory.TotalRows= 20;
+            _gameHistory.TotalGenerations= 50;
             _canConfigureGrid = true;
             _gameStateMessage = StartSimulationMessage;
-            _gameHistory = new GameHistory();
             _gameBoardLayout = _unityContainer.Resolve<Board>();
             _gameStopSubsriptionToken = AppEventAggregator.GetEvent<GameCompleteEvent>().Subscribe(GameCompleteEventHandler);
             TriggerGame = new DelegateCommand(TriggerGameAction, CanTriggerGame);
@@ -61,7 +59,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         private bool CanTriggerGame()
         {
-            return NumberOfColumns.HasValue && NumberOfRows.HasValue && NumberOfGenerations.HasValue;
+            return NumberOfGenerations >=1;
         }
 
         private void GameCompleteEventHandler(GameHistory gameBoard)
@@ -72,7 +70,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
         private void ConfigureBoard()
         {
-            _gameBoardLayout.ConfigureBoard(_numberOfRows.Value, _numberOfColumns.Value);
+            _gameBoardLayout.ConfigureBoard(_gameHistory.TotalRows, _gameHistory.ToatlColumns);
         }
 
         private void TriggerGameAction()
@@ -97,9 +95,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         {
             var gameBoard = _gameBoardLayout.GetCopy();
             _gameHistory.GameBoard = gameBoard;
-            _gameHistory.ToatlColumns = NumberOfColumns.Value;
-            _gameHistory.TotalRows = NumberOfRows.Value;
-            _gameHistory.TotalGenerations = NumberOfGenerations.Value;
         }
 
         #endregion
@@ -142,48 +137,50 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
 
             }
         }
-        public int? NumberOfGenerations
+        public int NumberOfGenerations
         {
             get
             {
 
-                return _numberOfGenerations;
+                return _gameHistory.TotalGenerations;
             }
 
             set
             {
-                SetProperty(ref _numberOfGenerations, value);
+                _gameHistory.TotalGenerations = value;
                 RereshButtons();
             }
         }
 
-        public int? NumberOfRows
+        public int NumberOfRows
         {
             get
             {
 
-                return _numberOfRows;
+                return _gameHistory.TotalRows;
             }
 
             set
             {
-                SetProperty(ref _numberOfRows, value);
+                _gameHistory.TotalRows = value;
+
                 ConfigureBoard();
                 RereshButtons();
 
             }
         }
-        public int? NumberOfColumns
+        public int NumberOfColumns
         {
             get
             {
 
-                return _numberOfColumns;
+                return _gameHistory.ToatlColumns;
             }
 
             set
             {
-                SetProperty(ref _numberOfColumns, value);
+                _gameHistory.ToatlColumns = value;
+
                 ConfigureBoard();
                 RereshButtons();
             }
