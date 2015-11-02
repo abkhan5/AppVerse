@@ -11,7 +11,7 @@
         <conv:BoolToVisibillityConverter x:Key="lifeStateConverter" />
         <conv:VisibilityToStarHeightConverter x:Key="VisibilityToStarHeightConverter" />
     </UserControl.Resources>
-    <Grid ShowGridLines="True">
+    <Grid>
         <Grid.RowDefinitions >
             <RowDefinition Height="*" />
             <RowDefinition Height="{Binding Visibility, ElementName=GameConfigContent, Converter={StaticResource VisibilityToStarHeightConverter}}" />

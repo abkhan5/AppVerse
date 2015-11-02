@@ -6,26 +6,23 @@
              xmlns:local="clr-namespace:AppVerse.Desktop.GameOfLife.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Border Style="{DynamicResource BoarderStyle}">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2"/>
+                <RowDefinition Height="100*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="1" Text="{Binding GenerationProgress,Mode=TwoWay}"
+            <TextBlock Grid.Row="0" Text="{Binding GenerationProgress,Mode=TwoWay}"
+                     Height="20"
                      HorizontalAlignment="Center" 
                      VerticalAlignment="Center" 
                      TextAlignment="Center"/>
 
-            <ContentControl Grid.Row="3" 
+            <ContentControl Grid.Row="2" 
                             Content="{Binding GameBoard,Mode=TwoWay}"  
                             VerticalAlignment="Stretch"
                             HorizontalAlignment="Stretch"/>
         </Grid>
 
-    </Border>
 
 </UserControl>

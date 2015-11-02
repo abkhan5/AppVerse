@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:AppVerse.Desktop.StatusBar.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-          <TextBlock Text="Status bar" />  
-    </Grid>
+
+    <StatusBar >
+        <StatusBarItem>App verse</StatusBarItem>
+        <Separator Style="{DynamicResource MetroStatusBarSeparator}" />
+        <StatusBarItem>Current module:</StatusBarItem>
+        <!--<StatusBarItem Content="{Binding ElementName=MainTabControl, Path=SelectedItem.Header, Mode=OneWay}" />-->
+    </StatusBar>
+
 </UserControl>

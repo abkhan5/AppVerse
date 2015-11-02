@@ -65,7 +65,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             get { return _gameBoard; }
             set
             {
-                _gameBoard = value;
                 SetProperty(ref _gameBoard, value);
             }
         }
@@ -74,7 +73,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             get { return _generationProgress; }
             set
             {
-                _generationProgress = value;
                 SetProperty(ref _generationProgress, value);
             }
         }
@@ -96,6 +94,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
             _gameHistory = gameHistory;
             GameBoard = _gameHistory.GameBoard;
             RunGame();
+
         }
 
         private void GameStopEventHandler(GameHistory gameHistory)
@@ -120,7 +119,6 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
                 return;
             }
             GenerationProgress = string.Format(GenerationMessageFormat, generationNumber, _gameHistory.TotalGenerations);
-
         }
 
         private void RunGameInTask()

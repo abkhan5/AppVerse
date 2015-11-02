@@ -15,7 +15,10 @@
             <RowDefinition Height="1" />
         </Grid.RowDefinitions>
 
-        <TextBlock TextAlignment="Center" Style="{DynamicResource ResourceKey=HeaderTextBlock}" Text="{Binding Title}" Grid.Row="1" />
+        <Label HorizontalAlignment="Center" 
+               Style="{DynamicResource DescriptionHeaderStyle}" 
+               Content="{Binding Title}"
+               Grid.Row="1" />
 
 
         <TextBlock Width="1000" Text="{Binding OverView}" Grid.Row="3" TextWrapping="WrapWithOverflow"/>

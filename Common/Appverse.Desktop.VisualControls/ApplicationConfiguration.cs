@@ -6,7 +6,17 @@ namespace Appverse.Desktop.VisualControls
 {
     public static class ApplicationConfiguration
     {
+
         internal const string FilePath = "pack://application:,,,/Appverse.Desktop.VisualControls;component/";
+        internal static List<string> _mahMetroAppAssemplies = new List<string>()
+        {
+
+        "pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml",
+        "pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" ,
+        "pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" ,
+         "pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml",
+          "pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" };
+
 
         private static IEnumerable<string> StyleSelector(AppThemes appThemes)
         {
@@ -24,6 +34,16 @@ namespace Appverse.Desktop.VisualControls
             }
 
             return styleSource;
+        }
+
+        public static void ReadMahMetroApps()
+        {
+            foreach (var item in _mahMetroAppAssemplies)
+            {
+                var source = item;
+                Extensions.SetResource(source);
+
+            }
         }
 
         public static void SetDefaultResources(AppThemes appThemes)

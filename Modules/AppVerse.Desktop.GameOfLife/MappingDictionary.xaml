@@ -69,7 +69,6 @@
 
 
     <DataTemplate DataType="{x:Type models:Board}">
-        <Border Style="{DynamicResource BoarderStyle}">
             <ScrollViewer  VirtualizingPanel.IsVirtualizing="True" 
                            VirtualizingPanel.VirtualizationMode="Recycling"
                            VirtualizingPanel.ScrollUnit="Pixel"
@@ -94,7 +93,6 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </ScrollViewer>
-        </Border>
     </DataTemplate>
 
 </ResourceDictionary>
