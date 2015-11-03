@@ -1,16 +1,18 @@
-﻿<UserControl x:Class="AppVerse.Desktop.GameOfLife.Views.GameDetailsView"
+﻿<Controls:MetroContentControl  x:Class="AppVerse.Desktop.GameOfLife.Views.GameDetailsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AppVerse.Desktop.GameOfLife.Views"
-                 xmlns:conv="clr-namespace:Appverse.Desktop.VisualControls.Converters;assembly=Appverse.Desktop.VisualControls"
+                  xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      
+                               xmlns:conv="clr-namespace:Appverse.Desktop.VisualControls.Converters;assembly=Appverse.Desktop.VisualControls"
                  >
 
-    <UserControl.Resources>
+    <Controls:MetroContentControl.Resources>
         <conv:BoolToVisibillityConverter x:Key="lifeStateConverter" />
         <conv:VisibilityToStarHeightConverter x:Key="VisibilityToStarHeightConverter" />
-    </UserControl.Resources>
+    </Controls:MetroContentControl.Resources>
     <Grid>
         <Grid.RowDefinitions >
             <RowDefinition Height="*" />
@@ -35,4 +37,4 @@
                         HorizontalAlignment="Stretch"/>
 
     </Grid>
-</UserControl>
+</Controls:MetroContentControl>

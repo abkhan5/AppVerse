@@ -7,7 +7,6 @@ namespace AppVerse.Desktop.Models.GameOfLife
     public class Cell : DataModelBase
     {
         #region Private members
-        private string _cellInfo;
         int _lastRow, _lastColumn;
         private LifeState _cellState;
 
@@ -93,7 +92,6 @@ namespace AppVerse.Desktop.Models.GameOfLife
 
                 case LifeState.Dead:
                     State = LifeState.Alive;
-
                     break;
 
             }

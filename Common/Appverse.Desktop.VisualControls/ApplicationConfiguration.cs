@@ -10,12 +10,14 @@ namespace Appverse.Desktop.VisualControls
         internal const string FilePath = "pack://application:,,,/Appverse.Desktop.VisualControls;component/";
         internal static List<string> _mahMetroAppAssemplies = new List<string>()
         {
-
+            "pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml",
         "pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml",
         "pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" ,
         "pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" ,
          "pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml",
-          "pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" };
+          "pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml",
+          "pack://application:,,,/MahApps.Metro.Resources;component/Icons.xaml"
+        };
 
 
         private static IEnumerable<string> StyleSelector(AppThemes appThemes)

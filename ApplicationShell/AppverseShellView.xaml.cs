@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows;
-using Appverse.Desktop.VisualControls;
-using Microsoft.Practices.Unity;
+﻿using Appverse.Desktop.VisualControls;
 
 namespace AppVerse.Desktop.ApplicationShell
 {

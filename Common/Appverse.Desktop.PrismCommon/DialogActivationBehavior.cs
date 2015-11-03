@@ -1,9 +1,9 @@
 ﻿#region Namespace
 
-using System.Collections.Specialized;
-using System.Windows;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.Regions.Behaviors; 
+using System.Collections.Specialized;
+using System.Windows;
 #endregion
 
 namespace Appverse.Desktop.PrismCommon

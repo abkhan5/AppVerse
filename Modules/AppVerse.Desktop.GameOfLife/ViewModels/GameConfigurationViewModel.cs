@@ -1,5 +1,4 @@
 ﻿#region Namespace
-using System;
 using AppVerse.Desktop.AppCommon.BaseClasses;
 using AppVerse.Desktop.ApplicationEvents.GameOfLife;
 using AppVerse.Desktop.Models.GameOfLife;

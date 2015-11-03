@@ -1,10 +1,10 @@
 ﻿#region Namespace
 
-using System.ComponentModel;
-using System.Windows;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using System;
+using System.ComponentModel;
+using System.Windows;
 
 #endregion
 namespace Appverse.Desktop.PrismCommon
