@@ -6,11 +6,8 @@
              xmlns:local="clr-namespace:AppVerse.Desktop.GameOfLife.Views"
              mc:Ignorable="d" 
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             d:DesignHeight="300" d:DesignWidth="300">
-
-
-    
-        <Grid ShowGridLines="True">
+             d:DesignHeight="300" d:DesignWidth="300">    
+        <Grid >
             <Grid.RowDefinitions >
                 <RowDefinition Height="1" />
                 <RowDefinition Height="10*" />
@@ -48,7 +45,9 @@
                     <Button Content="{Binding GameStateMessage}" 
                             Command="{Binding TriggerGame}"  
                             MinWidth="100"
-                         Height="20" />
+                            Height="20" 
+                            Style="{DynamicResource AccentedSquareButtonStyle}" />
+                
                 </StackPanel>
             </Grid>
 
