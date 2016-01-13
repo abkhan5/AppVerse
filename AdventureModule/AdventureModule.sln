@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.AdventureWorks.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.AdventureWorks.Repository", "AppVerse.AdventureWorks.Repository\AppVerse.AdventureWorks.Repository.csproj", "{175488DD-A846-499E-9A96-77C67E0C4FF8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{28AFCF3F-E5AF-40D2-9307-74079917C404}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

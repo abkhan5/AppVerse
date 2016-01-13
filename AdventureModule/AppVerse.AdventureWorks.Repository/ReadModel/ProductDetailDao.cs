@@ -12,18 +12,24 @@ namespace AppVerse.AdventureWorks.Repository.ReadModel
 
                                 join prdPhotoRel in context.ProductProductPhotoes
                                 on prd.ProductID equals prdPhotoRel.ProductID
+                                into prdPhotoJoin 
+                                from prdJoinRes in prdPhotoJoin.DefaultIfEmpty()
 
                                 join prdPhoto in context.ProductPhotoes on
-                                prdPhotoRel.ProductPhotoID equals prdPhoto.ProductPhotoID
+                                prdJoinRes.ProductPhotoID equals prdPhoto.ProductPhotoID
 
                                 join prdModel in context.ProductModels
                                 on prd.ProductModelID equals prdModel.ProductModelID
+                                into prdModelJoin 
+                                from prdModelRes in prdModelJoin.DefaultIfEmpty()
+
                                 orderby prd.ProductID
+
                                 select new DTO.Product
                                 {
                                     ProductID = prd.ProductID,
                                     ProductName = prd.Name,
-                                    ProductModelName = prdModel.Name,
+                                    ProductModelName = prdModelRes.Name,
                                     ProductNumber = prd.ProductNumber,
                                     ThumbNailPhoto = prdPhoto.ThumbNailPhoto,
                                     ThumbnailPhotoFileName = prdPhoto.ThumbnailPhotoFileName
@@ -42,6 +48,15 @@ namespace AppVerse.AdventureWorks.Repository.ReadModel
                 yield return item;
             }
         }
+
+        public DTO.Product GetProduct(int productId)
+        {
+            var context = new AdventureworksDataModel();
+
+           var prd= GetProductsQuery(context).FirstOrDefault(item=>item.ProductID==productId);
+            return prd;
+        }
+
 
     }
 }

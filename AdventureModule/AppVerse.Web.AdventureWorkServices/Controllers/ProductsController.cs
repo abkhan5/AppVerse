@@ -28,17 +28,16 @@ namespace AppVerse.Web.AdventureWorkServices.Controllers
         public string GetModelNumber(int id)
         {
             IProductDetailDao repo = new ProductDetailDao();
-            return repo.GetAllProducts()?.First(item=>item.ProductID==id)?.ProductModelName;
+            return repo.GetProduct(id)?.ProductNumber;
         }
 
 
-        [Route("api/products/{id}/ProductName")]
-        [HttpGet]
+        [Route("api/products/{productId}/ProductName")]
         // GET: api/Products/5
-        public string GetProductName(int id)
+        public IHttpActionResult GetProductName(int productId)
         {
             IProductDetailDao repo = new ProductDetailDao();
-            return repo.GetAllProducts()?.First(item => item.ProductID == id)?.ProductName;
+            return Ok( repo.GetAllProducts()?.First(item => item.ProductID == productId)?.ProductName);
         }
 
 
