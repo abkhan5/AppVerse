@@ -5,10 +5,10 @@ using Microsoft.Practices.Unity;
 
 namespace AppVerse.Desktop.GameOfLife.ViewModels
 {
-  public  class GameOfLifeShellViewModel : BaseViewModel
+    public class GameOfLifeShellViewModel : BaseViewModel
     {
 
-        #region Private memebers
+        #region Private members
 
         #endregion
 
@@ -18,7 +18,7 @@ namespace AppVerse.Desktop.GameOfLife.ViewModels
         /// 
         /// </summary>
         /// <param name="unityContainer"></param>
-        public GameOfLifeShellViewModel(IUnityContainer unityContainer):base(unityContainer)
+        public GameOfLifeShellViewModel(IUnityContainer unityContainer) : base(unityContainer)
         {
 
         }

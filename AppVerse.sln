@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BA797E09-6C25-4F94-9A62-7EB1F64668DE}"
 EndProject
@@ -87,6 +87,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Desktop.ApplicationEvents", "Common\AppVerse.Desktop.ApplicationEvents\AppVerse.Desktop.ApplicationEvents.csproj", "{C5A1DCB3-08F1-4C93-9ED2-B65737D0189B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appverse.Desktop.PrismCommon", "Common\Appverse.Desktop.PrismCommon\Appverse.Desktop.PrismCommon.csproj", "{91B3B8DB-8962-4A10-9C86-45B0513342CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Desktop.AdventureWorksModule", "Modules\AppVerse.Desktop.AdventureWorksModule\AppVerse.Desktop.AdventureWorksModule.csproj", "{E3D3997F-38BA-454A-83F3-D38CD30D685C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -356,6 +358,22 @@ Global
 		{91B3B8DB-8962-4A10-9C86-45B0513342CC}.Release|x64.Build.0 = Release|Any CPU
 		{91B3B8DB-8962-4A10-9C86-45B0513342CC}.Release|x86.ActiveCfg = Release|Any CPU
 		{91B3B8DB-8962-4A10-9C86-45B0513342CC}.Release|x86.Build.0 = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|ARM.Build.0 = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|x64.Build.0 = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Debug|x86.Build.0 = Debug|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|ARM.Build.0 = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|x64.ActiveCfg = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|x64.Build.0 = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|x86.ActiveCfg = Release|Any CPU
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -376,5 +394,6 @@ Global
 		{CCDD9BCB-38B7-4852-8C89-57C2C7F96CD7} = {8E06AD5D-A90B-4D2B-BA4A-A047D9545978}
 		{C5A1DCB3-08F1-4C93-9ED2-B65737D0189B} = {BA797E09-6C25-4F94-9A62-7EB1F64668DE}
 		{91B3B8DB-8962-4A10-9C86-45B0513342CC} = {BA797E09-6C25-4F94-9A62-7EB1F64668DE}
+		{E3D3997F-38BA-454A-83F3-D38CD30D685C} = {FF91AF5A-57FC-4390-BA5E-6D4F8D11BFE9}
 	EndGlobalSection
 EndGlobal
