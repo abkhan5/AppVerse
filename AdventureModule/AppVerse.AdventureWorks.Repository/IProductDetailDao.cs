@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AppVerse.AdventureWorks.Repository
 {
     public interface IProductDetailDao
     {
-        IEnumerable<DTO.Product> GetAllProducts();
+        IQueryable<DTO.Product> GetAllProducts(string sort = "ProductID");
 
         DTO.Product GetProduct(int productId);
 

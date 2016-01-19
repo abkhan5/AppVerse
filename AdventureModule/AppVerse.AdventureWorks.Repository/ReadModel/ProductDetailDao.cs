@@ -1,6 +1,7 @@
 ﻿using AppVerse.AdventureWorks.DataEntities;
 using System.Collections.Generic;
 using System.Linq;
+using AppVerse.Common.Utilities;
 
 namespace AppVerse.AdventureWorks.Repository.ReadModel
 {
@@ -23,7 +24,6 @@ namespace AppVerse.AdventureWorks.Repository.ReadModel
                                 into prdModelJoin 
                                 from prdModelRes in prdModelJoin.DefaultIfEmpty()
 
-                                orderby prd.ProductID
 
                                 select new DTO.Product
                                 {
@@ -38,15 +38,19 @@ namespace AppVerse.AdventureWorks.Repository.ReadModel
 
         }
 
-        public IEnumerable<DTO.Product> GetAllProducts()
+        public IQueryable<DTO.Product> GetAllProducts(string sort)
         {
             var context = new AdventureworksDataModel();
 
             var productDetails = GetProductsQuery(context);
-            foreach (var item in productDetails)
+
+
+            if (!string.IsNullOrEmpty(sort))
             {
-                yield return item;
+                productDetails = productDetails.ApplySort(sort);
             }
+            return productDetails;
+            
         }
 
         public DTO.Product GetProduct(int productId)
