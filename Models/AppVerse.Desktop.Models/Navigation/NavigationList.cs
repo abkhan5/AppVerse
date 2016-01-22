@@ -6,7 +6,7 @@ using System.Linq;
 #endregion
 namespace AppVerse.Desktop.Models.Navigation
 {
-    public  class NaviagationList :List<NavigationItem>
+    public  class NavigationList :List<NavigationItem>
     {
 
         public BaseViewModel this[string moduleName]

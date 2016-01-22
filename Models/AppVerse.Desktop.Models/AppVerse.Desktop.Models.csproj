@@ -102,8 +102,8 @@
     <Compile Include="GameOfLife\NeighbouringCoordinates.cs" />
     <Compile Include="GameOfLife\StillLifeEnum.cs" />
     <Compile Include="GameOfLife\ModelExtensions.cs" />
-    <Compile Include="Navigation\NaviagationList.cs" />
-    <Compile Include="Navigation\NaviagationModel.cs" />
+    <Compile Include="Navigation\NavigationList.cs" />
+    <Compile Include="Navigation\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

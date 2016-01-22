@@ -60,10 +60,6 @@
       <HintPath>..\..\AppVerseBin\Appverse.Desktop.PrismCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AppVerse.Desktop.Services">
-      <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Services.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="AppVerse.Desktop.Services.Interfaces">
       <HintPath>..\..\AppVerseBin\AppVerse.Desktop.Services.Interfaces.dll</HintPath>
       <Private>False</Private>

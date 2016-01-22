@@ -1,13 +1,10 @@
 ﻿#region Namespace
 using AppVerse.Desktop.AppCommon.BaseClasses;
-
 #endregion
+
 namespace AppVerse.Desktop.Models.Navigation
 {
-
-
-
-    public class NavigationItem 
+   public class NavigationItem 
     {
 
         public string ModuleName { get; set; }
