@@ -21,8 +21,6 @@
                 <RowDefinition Height="1"/>
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
-
-            
             <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1" />
@@ -44,11 +42,7 @@
                             regions:RegionManager.RegionName="{x:Static inf:RegionNames.MainRegion}" 
                             VerticalContentAlignment="Stretch"
                             HorizontalContentAlignment="Stretch" />
-
-               
             </Grid>
-
-
             <ContentControl x:Name="StatusRegion" Grid.Row="3"
                             regions:RegionManager.RegionName="{x:Static inf:RegionNames.StatusRegion}" 
                             VerticalContentAlignment="Stretch"

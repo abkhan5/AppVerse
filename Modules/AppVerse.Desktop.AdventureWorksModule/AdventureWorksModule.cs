@@ -31,7 +31,7 @@ namespace AppVerse.Desktop.AdventureWorksModule
         {
             Extensions.RegisterResources(_resources);
 
-            _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<AdventureWorksShellViewModel>(), ModuleNames.AdventureWorks);
+          //  _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<AdventureWorksShellViewModel>(), ModuleNames.AdventureWorks);
 
 
         }

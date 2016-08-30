@@ -30,7 +30,7 @@ namespace AppVerse.Desktop.GameOfLife
         {
             Extensions.RegisterResources(_resources);
 
-            _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<GameOfLifeShellViewModel>(), ModuleNames.GameOLife);
+            //_regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<GameOfLifeShellViewModel>(), ModuleNames.GameOLife);
 
         }
     }
