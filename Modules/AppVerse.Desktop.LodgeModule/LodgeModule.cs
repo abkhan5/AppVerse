@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Appverse.Desktop.Common;
 using Appverse.Desktop.VisualControls;
 using AppVerse.Desktop.AppCommon.BaseClasses;
+using AppVerse.Desktop.LodgeModels;
+using AppVerse.Desktop.LodgeModels.Model;
 using AppVerse.Desktop.LodgeModule.ViewModels;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
@@ -29,9 +31,11 @@ namespace AppVerse.Desktop.LodgeModule
         public override void RegisterResources()
         {
             Extensions.RegisterResources(_resources);
-
             _regionManager.Regions[RegionNames.MainRegion].Add(_unityContainer.Resolve<LodgeViewModel>(), ModuleNames.Lodge);
+            LodgeDataContext context = new LodgeDataContext();
+            var res = context.Query<Resident>().ToList();
 
+            _unityContainer.RegisterInstance(context);
         }
     }
 }

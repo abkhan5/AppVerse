@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Patna]
+    AUTHORIZATION [dbo];
+
