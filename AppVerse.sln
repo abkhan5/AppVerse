@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Database.MsSql", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{77612D9B-D3F9-415E-8030-95083DD6EF2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Domain.Auth", "Domains\AppVerse.Domain.Auth\AppVerse.Domain.Auth.csproj", "{AB6B1149-45EA-4C26-9986-AD584553215B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Datastore.AzureCosmos", "Datastore\AppVerse.Datastore.AzureCosmos\AppVerse.Datastore.AzureCosmos.csproj", "{57103572-5AB0-448F-8F29-03B8C7079098}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{33C5499F-7D50-4C62-8AB4-2D50325B2156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33C5499F-7D50-4C62-8AB4-2D50325B2156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33C5499F-7D50-4C62-8AB4-2D50325B2156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6B1149-45EA-4C26-9986-AD584553215B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6B1149-45EA-4C26-9986-AD584553215B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6B1149-45EA-4C26-9986-AD584553215B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6B1149-45EA-4C26-9986-AD584553215B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57103572-5AB0-448F-8F29-03B8C7079098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57103572-5AB0-448F-8F29-03B8C7079098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57103572-5AB0-448F-8F29-03B8C7079098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57103572-5AB0-448F-8F29-03B8C7079098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +50,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5AD5BE20-106C-40DB-858F-BD2F42B882E5} = {2D03C337-5257-40F3-9BA5-CF7F57810CD5}
 		{33C5499F-7D50-4C62-8AB4-2D50325B2156} = {3F72DC4E-2B02-469C-A1A4-202D170C26EC}
+		{AB6B1149-45EA-4C26-9986-AD584553215B} = {77612D9B-D3F9-415E-8030-95083DD6EF2D}
+		{57103572-5AB0-448F-8F29-03B8C7079098} = {3F72DC4E-2B02-469C-A1A4-202D170C26EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9E7DE8B-913A-4751-B047-8DF331CEC98B}
