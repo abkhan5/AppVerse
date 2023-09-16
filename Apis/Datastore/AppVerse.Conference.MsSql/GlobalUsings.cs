@@ -1,0 +1,14 @@
+﻿global using Microsoft.AspNetCore.Identity;
+global using AppVerse.Conference.MsSql.Entity;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using AppVerse.Base;
+global using System.Collections.ObjectModel;
+global using AppVerse.Conference.MsSql.EntityMapping;
+global using AppVerse.Services;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.ChangeTracking;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Options;
+global using System.Reflection;

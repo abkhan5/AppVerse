@@ -1,0 +1,11 @@
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\bin\Debug\net7.0\AppVerse.Common.deps.json
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\bin\Debug\net7.0\AppVerse.Common.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\bin\Debug\net7.0\AppVerse.Common.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.AssemblyInfoInputs.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.AssemblyInfo.cs
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.csproj.CoreCompileInputs.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\refint\AppVerse.Common.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\ref\AppVerse.Common.dll

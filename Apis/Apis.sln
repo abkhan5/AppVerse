@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5A52C732-BC0C-483B-A5F6-7546C53ED3FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Common", "Core\AppVerse.Common\AppVerse.Common.csproj", "{5B8EDB44-DFE4-42D1-A901-F68877467743}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Datastore", "Datastore", "{BAD27FC8-ADA6-48B0-8BD8-AE548DD1FFCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Conference.MsSql", "Datastore\AppVerse.Conference.MsSql\AppVerse.Conference.MsSql.csproj", "{7B5EB7C2-1867-4B70-AD82-486DA68FB79C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AB8A583D-266E-4151-98F0-40F611FE3051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Services.Auth", "Services\AppVerse.Services.Auth\AppVerse.Services.Auth.csproj", "{2479AE1C-BE3C-4165-8578-A49C387F96F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Services.AzureMessages", "Services\AppVerse.Services.AzureMessages\AppVerse.Services.AzureMessages.csproj", "{DA94F28B-476F-4017-81B9-203553371D2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B8EDB44-DFE4-42D1-A901-F68877467743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8EDB44-DFE4-42D1-A901-F68877467743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8EDB44-DFE4-42D1-A901-F68877467743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8EDB44-DFE4-42D1-A901-F68877467743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5EB7C2-1867-4B70-AD82-486DA68FB79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5EB7C2-1867-4B70-AD82-486DA68FB79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5EB7C2-1867-4B70-AD82-486DA68FB79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5EB7C2-1867-4B70-AD82-486DA68FB79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2479AE1C-BE3C-4165-8578-A49C387F96F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2479AE1C-BE3C-4165-8578-A49C387F96F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2479AE1C-BE3C-4165-8578-A49C387F96F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2479AE1C-BE3C-4165-8578-A49C387F96F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA94F28B-476F-4017-81B9-203553371D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA94F28B-476F-4017-81B9-203553371D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA94F28B-476F-4017-81B9-203553371D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA94F28B-476F-4017-81B9-203553371D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5B8EDB44-DFE4-42D1-A901-F68877467743} = {5A52C732-BC0C-483B-A5F6-7546C53ED3FE}
+		{7B5EB7C2-1867-4B70-AD82-486DA68FB79C} = {BAD27FC8-ADA6-48B0-8BD8-AE548DD1FFCF}
+		{2479AE1C-BE3C-4165-8578-A49C387F96F1} = {AB8A583D-266E-4151-98F0-40F611FE3051}
+		{DA94F28B-476F-4017-81B9-203553371D2C} = {AB8A583D-266E-4151-98F0-40F611FE3051}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D24F3DEB-90F9-47AE-8A6F-A7D62AD589DC}
+	EndGlobalSection
+EndGlobal

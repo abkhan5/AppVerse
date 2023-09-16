@@ -1,0 +1,17 @@
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.csproj.AssemblyReference.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.AssemblyInfoInputs.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.AssemblyInfo.cs
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.csproj.CoreCompileInputs.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\bin\Debug\net7.0\AppVerse.Conference.MsSql.deps.json
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\bin\Debug\net7.0\AppVerse.Conference.MsSql.runtimeconfig.json
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\bin\Debug\net7.0\AppVerse.Conference.MsSql.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\bin\Debug\net7.0\AppVerse.Conference.MsSql.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\bin\Debug\net7.0\AppVerse.Common.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\bin\Debug\net7.0\AppVerse.Common.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.csproj.CopyComplete
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\refint\AppVerse.Conference.MsSql.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\AppVerse.Conference.MsSql.genruntimeconfig.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Datastore\AppVerse.Conference.MsSql\obj\Debug\net7.0\ref\AppVerse.Conference.MsSql.dll

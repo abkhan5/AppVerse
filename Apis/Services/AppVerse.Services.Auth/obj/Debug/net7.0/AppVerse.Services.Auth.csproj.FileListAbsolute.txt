@@ -1,0 +1,17 @@
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.csproj.AssemblyReference.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.AssemblyInfoInputs.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.AssemblyInfo.cs
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.csproj.CoreCompileInputs.cache
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\bin\Debug\net7.0\AppVerse.Services.Auth.deps.json
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\bin\Debug\net7.0\AppVerse.Services.Auth.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\bin\Debug\net7.0\AppVerse.Services.Auth.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\bin\Debug\net7.0\AppVerse.Common.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\bin\Debug\net7.0\AppVerse.Conference.MsSql.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\bin\Debug\net7.0\AppVerse.Common.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\bin\Debug\net7.0\AppVerse.Conference.MsSql.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.csproj.CopyComplete
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\refint\AppVerse.Services.Auth.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\AppVerse.Services.Auth.pdb
+C:\Workspace\GitRepo\AppVerse\Apis\Services\AppVerse.Services.Auth\obj\Debug\net7.0\ref\AppVerse.Services.Auth.dll
