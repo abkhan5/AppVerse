@@ -1,0 +1,29 @@
+﻿v1.1.1
+• Minor Enhancements and Fixes
+
+v1.1.0
+• Dotnet 7 Support
+• Minor Enhancements and Fixes
+
+v1.0.1
+• Fixed Missing Cast
+
+v1.0.0
+• First Milestone Build and Production App Ready
+• Breaking Changes: MauiIcons.Fluent is Replaced by MauiIcons.SegoeFluent
+  You'll need to download the MauiIcons.SegoeFluent Package using the below link for Continueing to use Windows Fluent Icons
+  https://www.nuget.org/packages/AathifMahir.Maui.MauiIcons.SegoeFluent
+
+v0.2.0-pre2
+• Ported Critical Fix from Stable Build
+
+v0.2.0-pre1
+• Breaking Changes: MauiIcons.Fluent is Switched to MauiIcons.SegoeFluent
+  You'll need to download the MauiIcons.SegoeFluent Package to using the below link use the Old Fluent Icon Package
+  https://www.nuget.org/packages/AathifMahir.Maui.MauiIcons.SegoeFluent
+• Add New Icon Collection for New Fluent Package
+
+v0.1.0
+• First Stable Build
+• Added New Attributes to Icon Extension
+• Improvements to Documentation
