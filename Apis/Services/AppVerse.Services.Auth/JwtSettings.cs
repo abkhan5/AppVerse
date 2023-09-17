@@ -1,6 +1,6 @@
 ﻿namespace AppVerse.Service.Authentication;
 
-public class JwtSettings
+public record JwtSettings
 {
     public const string JwtOptionsName = "JwtSettings";
     public string Secret { get; set; }

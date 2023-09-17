@@ -9,3 +9,4 @@ C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVers
 C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\refint\AppVerse.Common.dll
 C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.pdb
 C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\ref\AppVerse.Common.dll
+C:\Workspace\GitRepo\AppVerse\Apis\Core\AppVerse.Common\obj\Debug\net7.0\AppVerse.Common.csproj.AssemblyReference.cache

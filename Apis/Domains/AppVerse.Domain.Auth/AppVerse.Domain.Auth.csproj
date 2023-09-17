@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AppVerse.Common\AppVerse.Common.csproj" />
+    <ProjectReference Include="..\..\Services\AppVerse.Services.Auth\AppVerse.Services.Auth.csproj" />
+  </ItemGroup>
+
+</Project>

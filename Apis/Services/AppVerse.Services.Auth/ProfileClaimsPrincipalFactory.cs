@@ -27,7 +27,6 @@ internal class ProfileClaimsPrincipalFactory : UserClaimsPrincipalFactory<AppVer
             new(JwtRegisteredClaimNames.AuthTime, DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)),
             new(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)),
             new(JwtRegisteredClaimNames.Exp, DateTime.UtcNow.AddMilliseconds(1).ToString(CultureInfo.InvariantCulture)),
-            new(JwtRegisteredClaimNames.Iss, "EveryEng")
         };
 
         if (!string.IsNullOrEmpty(recordId))

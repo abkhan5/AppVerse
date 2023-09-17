@@ -1,8 +1,10 @@
-﻿namespace AppVerse.Conference.MsSql;
+﻿
+
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class DbContextExtension
 {
-    public static void AddEveryEngDbContext(this IServiceCollection services, IConfiguration configuration)
+    public static void AddAppVerseDbContext(this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<AzureSqlStoreSettings>(configuration.GetSection(AzureSqlStoreSettings.AzureSqlStoreOptions));
         services.AddScoped<DbContext, AppVerseDbContext>();

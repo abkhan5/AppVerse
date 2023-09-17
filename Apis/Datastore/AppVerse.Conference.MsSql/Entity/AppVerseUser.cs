@@ -1,6 +1,12 @@
 ﻿
 namespace AppVerse.Conference.MsSql.Entity;
 
+public enum LoginSourceEnum
+{
+    AppVerse,
+    Google
+}
+
 public  class AppVerseUser : IdentityUser
 {
     public AppVerseUser()

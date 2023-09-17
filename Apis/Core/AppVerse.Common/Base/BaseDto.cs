@@ -25,3 +25,28 @@ public abstract record BaseDto
         return discriminator;
     }
 }
+
+public record UserEventDto : BaseDto
+{
+    public string EventName { get; set; }
+    public string Message { get; set; }
+    public bool IsError { get; set; }
+    public string Location { get; set; }
+}
+
+public record UserProfileImagesDto : BaseDto
+{
+    public UserProfileImagesDto()
+    {
+
+    }
+    public UserProfileImagesDto(string userId, string profileUrl)
+    {
+        Id = userId;
+        UserId = userId;
+        CreatedOn = DateTime.UtcNow;
+        ProfileUrl = profileUrl;
+    }
+
+    public string ProfileUrl { get; set; }
+}

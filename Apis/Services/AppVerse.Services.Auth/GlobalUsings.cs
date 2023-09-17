@@ -10,7 +10,7 @@ global using Microsoft.EntityFrameworkCore;
 global using AppVerse.Conference.MsSql.EntityMapping;
 global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.ChangeTracking;
-global using System.Reflection;
+global using AppVerse.Service.Authentication;
 global using Microsoft.AspNetCore.DataProtection;
 global using Microsoft.Extensions.Logging;
 global using System.Security.Claims;

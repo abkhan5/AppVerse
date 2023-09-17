@@ -1,5 +1,5 @@
-﻿namespace AppVerse.Service.Authentication;
-
+﻿
+namespace Microsoft.Extensions.DependencyInjection;
 public static class AuthenticationExtension
 {
     public static void AddAppAuthentication(this IServiceCollection services, IConfiguration configuration)
