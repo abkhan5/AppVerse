@@ -7,10 +7,10 @@ internal record AppVerseUserDto
     {
 
     }
-    public AppVerseUserDto(AppVerseUser everyEngUser)
+    public AppVerseUserDto(AppVerseUser appverseUser)
     {
-        UserName = everyEngUser.UserName;
-        IsActive = everyEngUser.LockoutEnabled;
+        UserName = appverseUser.UserName;
+        IsActive = appverseUser.LockoutEnabled;
     }
     public string UserName { get; set; }
     public bool IsActive { get; set; }

@@ -2,7 +2,6 @@
 global using AppVerse.Conference.MsSql.Entity;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
-global using AppVerse.Base;
 global using System.Collections.ObjectModel;
 global using AppVerse.Conference.MsSql.EntityMapping;
 global using AppVerse.Services;

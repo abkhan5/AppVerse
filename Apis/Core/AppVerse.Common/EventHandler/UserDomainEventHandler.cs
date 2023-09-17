@@ -1,5 +1,4 @@
-﻿using AppVerse.Services;
-
+﻿
 namespace AppVerse.Infrastructure.Events;
 
 public class UserDomainEventHandler : IDomainEventHandler<UserDomainEvent>

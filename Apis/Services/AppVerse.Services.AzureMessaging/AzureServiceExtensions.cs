@@ -16,7 +16,6 @@ public static class AzureServiceExtensions
     {
         services.AddTransient<AzureEntityManager>();
         services.Configure<AzureServiceBusSettings>(configuration.GetSection(AzureServiceBusSettings.AzureServiceBusSettingsName));
-        //services.AddTransient<AzureQueueReceiver>();
         services.AddTransient<AzureMessageProcessor>();
         services.AddTransient<AzureServiceSenderBus>();
         services.AddTransient<IMessageSender, AzureServiceSenderBus>();
@@ -41,7 +40,7 @@ public static class AzureServiceExtensions
         {
             var config = sp.GetRequiredService<IConfiguration>();
             var logger = sp.GetRequiredService<ILogger<TokenCredential>>();
-            var managedId = config[AppVerse.EveryCredentials.ManagedIdentityId];
+            var managedId = config["ManagedIdentityId"];
             logger.LogCritical("Managed Identity {ManagedIdentity}", managedId);
             return new DefaultAzureCredential(new DefaultAzureCredentialOptions
             {

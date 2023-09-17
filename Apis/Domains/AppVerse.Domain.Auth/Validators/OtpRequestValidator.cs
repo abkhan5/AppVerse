@@ -8,9 +8,9 @@ public class LoginRequestValidator : AbstractValidator<LoginRequest>
     public LoginRequestValidator(DbContext context)
     {
         this.context = context;
-        RuleFor(x => x.UserLoginInput).MustAsync(UserExists).WithErrorCode(EveryEngErrorRegistry.ErrorAuth102);
+        RuleFor(x => x.UserLoginInput).MustAsync(UserExists).WithErrorCode("ErrorAuth102");
     }
 
     private async Task<bool> UserExists(string userLoginInput, CancellationToken cancellationToken)
-    => await context.Set<EveryEngUser>().AnyAsync(item => item.PhoneNumber == userLoginInput || item.Email == userLoginInput, cancellationToken);
+    => await context.Set<AppVerseUser>().AnyAsync(item => item.PhoneNumber == userLoginInput || item.Email == userLoginInput, cancellationToken);
 }

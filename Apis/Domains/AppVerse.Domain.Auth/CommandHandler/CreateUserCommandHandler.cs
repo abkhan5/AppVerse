@@ -1,8 +1,5 @@
 ﻿
 
-using AppVerse.Conference.MsSql.Entity;
-using AppVerse.Service.Authentication;
-
 namespace AppVerse.Domain.Authentication.CommandHandler;
 
 public class CreateUserCommandHandler : ICommandHandler<CreateProfile>
@@ -42,8 +39,8 @@ public class CreateUserCommandHandler : ICommandHandler<CreateProfile>
         if (result.Succeeded)
         {
             await messageSender.SendMessage(
-                new EveryEngUserCreatedDto(user.Email, user.Id, request.ReferalCode, request.Source),
-                EveryEngUserCreatedDto.EveryEngUserCreated, cancellationToken);
+                new UserCreatedDto(user.Email, user.Id, request.ReferalCode, request.Source),
+                UserCreatedDto.appverseUserCreated, cancellationToken);
         }
         else
         {

@@ -5,7 +5,7 @@ internal class AppUserAuthenticationService : IUserAuthenticationService
 {
     private readonly IUserClaimsPrincipalFactory<AppVerseUser> claimsPrincipalFactory;
     private readonly IDistributedCacheRepository distributedCacheRepository;
-    private readonly IOptions<AppServiceSettings> everyEngServiceOption;
+    private readonly IOptions<AppServiceSettings> appverseServiceOption;
     private readonly JwtTokenGenerator jwtTokenGenerator;
 
     private readonly IUniqueCodeGeneratorService uniqueCodeGeneratorService;
@@ -15,14 +15,14 @@ internal class AppUserAuthenticationService : IUserAuthenticationService
         UserManager<AppVerseUser> userManager,
         IUserClaimsPrincipalFactory<AppVerseUser> claimsPrincipalFactory,
         JwtTokenGenerator jwtTokenGenerator,
-        IOptions<AppServiceSettings> everyEngServiceOption,
+        IOptions<AppServiceSettings> appverseServiceOption,
         IDistributedCacheRepository distributedCacheRepository,
         IUniqueCodeGeneratorService uniqueCodeGeneratorService)
     {
         this.userManager = userManager;
         this.claimsPrincipalFactory = claimsPrincipalFactory;
         this.jwtTokenGenerator = jwtTokenGenerator;
-        this.everyEngServiceOption = everyEngServiceOption;
+        this.appverseServiceOption = appverseServiceOption;
         this.distributedCacheRepository = distributedCacheRepository;
         this.uniqueCodeGeneratorService = uniqueCodeGeneratorService;
     }
@@ -30,24 +30,24 @@ internal class AppUserAuthenticationService : IUserAuthenticationService
     public async Task<string> GenerateSignupLink(AppVerseUser user)
     {
         var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
-        var everyEngWebUrl = everyEngServiceOption.Value.ServiceHost;
-        var confirmUrl = $"{everyEngWebUrl}/{everyEngServiceOption.Value.VerifyAccountRoute}/"
+        var appverseWebUrl = appverseServiceOption.Value.ServiceHost;
+        var confirmUrl = $"{appverseWebUrl}/{appverseServiceOption.Value.VerifyAccountRoute}/"
                          + $"?token={HttpUtility.UrlEncode(token)}"
                          + $"&email={HttpUtility.UrlEncode(user.Email)}";
         return confirmUrl;
     }
 
     public async Task<string> GetLoginLinkAsync()
-    => $"{everyEngServiceOption.Value.ServiceHost}/auth/login";
+    => $"{appverseServiceOption.Value.ServiceHost}/auth/login";
 
 
     public async Task<EmailConfirmationDto> GetConfirmationModel(AppVerseUser user)
     => new EmailConfirmationDto
     {
         Token = await userManager.GenerateEmailConfirmationTokenAsync(user),
-        Address = everyEngServiceOption.Value.AuthServiceHost,
+        Address = appverseServiceOption.Value.AuthServiceHost,
         UserEmail = user.Email,
-        Path = everyEngServiceOption.Value.ConfirmationEmailPath
+        Path = appverseServiceOption.Value.ConfirmationEmailPath
     };
 
 
@@ -55,8 +55,8 @@ internal class AppUserAuthenticationService : IUserAuthenticationService
     {
         var token = await userManager.GeneratePasswordResetTokenAsync(user);
 
-        var everyEngWebUrl = everyEngServiceOption.Value.ServiceHost;
-        var confirmUrl = $"{everyEngWebUrl}/{everyEngServiceOption.Value.ResetPasswordRoute}/"
+        var appverseWebUrl = appverseServiceOption.Value.ServiceHost;
+        var confirmUrl = $"{appverseWebUrl}/{appverseServiceOption.Value.ResetPasswordRoute}/"
                          + $"?token={HttpUtility.UrlEncode(token)}"
                          + $"&email={HttpUtility.UrlEncode(user.Email)}";
         return confirmUrl;
@@ -108,8 +108,8 @@ internal class AppUserAuthenticationService : IUserAuthenticationService
     {
         var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
 
-        var everyEngWebUrl = everyEngServiceOption.Value.ServiceHost;
-        var confirmUrl = $"{everyEngWebUrl}/{everyEngServiceOption.Value.VerifyAccountRoute}/"
+        var appverseWebUrl = appverseServiceOption.Value.ServiceHost;
+        var confirmUrl = $"{appverseWebUrl}/{appverseServiceOption.Value.VerifyAccountRoute}/"
                          + $"?token={HttpUtility.UrlEncode(token)}"
                          + $"&email={HttpUtility.UrlEncode(user.Email)}";
         return confirmUrl;

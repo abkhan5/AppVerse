@@ -2,7 +2,6 @@
 
 using PasswordGenerator;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace AppVerse.Service.Authentication;
 

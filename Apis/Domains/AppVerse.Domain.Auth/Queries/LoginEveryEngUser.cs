@@ -1,4 +1,4 @@
 ﻿
 namespace AppVerse.Domain.Authentication.Queries;
 
-public record LoginEveryEngUser(string UserName, string Password) : IQuery<AuthenticationResponseDto>;
+public record LoginappverseUser(string UserName, string Password) : IQuery<AuthenticationResponseModel>;

@@ -1,4 +1,4 @@
 ﻿
 namespace AppVerse.Domain.Authentication.Queries;
 
-public record IsEmailValid(string UserEmail) : IQuery<EveryEngUserToken>;
+public record IsEmailValid(string UserEmail) : IQuery<UserToken>;

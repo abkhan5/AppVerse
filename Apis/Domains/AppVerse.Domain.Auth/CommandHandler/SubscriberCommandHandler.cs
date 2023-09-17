@@ -1,12 +1,7 @@
-﻿
-
-using AppVerse.Services;
-
-namespace AppVerse.Domain.Authentication.CommandHandler;
+﻿namespace AppVerse.Domain.Authentication.CommandHandler;
 
 public class SubscriberCommandHandler : ICommandHandler<SaveNewsLetterSubscription>
     , ICommandHandler<BookADemo>
-    , ICommandHandler<SaveUserEnquiry>
 
 {
     private readonly IAppRepository cmsRepository;
@@ -19,9 +14,6 @@ public class SubscriberCommandHandler : ICommandHandler<SaveNewsLetterSubscripti
     public async Task Handle(SaveNewsLetterSubscription request, CancellationToken cancellationToken) =>
         await cmsRepository.SaveNewLetterSubscription(request.EmailId, cancellationToken);
 
-
-    public async Task Handle(SaveUserEnquiry request, CancellationToken cancellationToken) =>
-        await cmsRepository.SaveUserQuery(request, cancellationToken);
 
     public async Task Handle(BookADemo request, CancellationToken cancellationToken)
     {

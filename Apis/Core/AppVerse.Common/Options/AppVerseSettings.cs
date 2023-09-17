@@ -2,7 +2,7 @@
 
 public sealed record AppServiceSettings
 {
-    public const string EveryEngServiceOptions = "AppServiceSettings";
+    public const string appverseServiceOptions = "AppServiceSettings";
     public string ServiceHost { get; set; }
     public string ResetPasswordRoute { get; set; }
     public string VerifyAccountRoute { get; set; }

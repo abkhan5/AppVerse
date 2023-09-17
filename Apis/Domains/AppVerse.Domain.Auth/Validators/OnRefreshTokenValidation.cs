@@ -9,8 +9,8 @@ public class OnRefreshTokenValidation : AbstractValidator<OnRefreshToken>
     public OnRefreshTokenValidation(DbContext context)
     {
         this.context = context;
-        RuleFor(x => x.RefreshToken).MustAsync(ValidateToken).WithErrorCode(EveryEngErrorRegistry.ErrorAuth106);
-        RuleFor(x => x.RefreshToken).MustAsync(ValidateUser).WithErrorCode(EveryEngErrorRegistry.ErrorAuth101);
+        RuleFor(x => x.RefreshToken).MustAsync(ValidateToken).WithErrorCode(AppVerseErrorRegistry.ErrorAuth106);
+        RuleFor(x => x.RefreshToken).MustAsync(ValidateUser).WithErrorCode(AppVerseErrorRegistry.ErrorAuth101);
     }
 
 

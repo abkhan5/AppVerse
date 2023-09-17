@@ -1,7 +1,5 @@
-using AppVerse.Conference.MsSql.Entity;
-using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+
+using AppVerse.Models;
 
 namespace AppVerse.Api.Auth.Controllers;
 
@@ -49,8 +47,8 @@ public class AuthController
             LoginSourceEnum.AppVerse), cancellationToken);
 
     [HttpPost]
-    public Task<AuthenticationResponseDto> Login([FromBody] LoginModel model, CancellationToken cancellationToken)
-   => mediator.Send(new LoginEveryEngUser(model.UserName, model.Password), cancellationToken);
+    public Task<AuthenticationResponseModel> Login([FromBody] LoginModel model, CancellationToken cancellationToken)
+   => mediator.Send(new LoginappverseUser(model.UserName, model.Password), cancellationToken);
 
     [HttpPost]
     public Task ResendConfirmationEmail([FromBody] EmailConfirmationModel model, CancellationToken cancellationToken)
@@ -61,10 +59,8 @@ public class AuthController
     await mediator.Send(new EmailConfirmation(model.UserEmail, model.Token), cancellationToken);
 
 
-
-
     [HttpPost]
-    public Task<AuthenticationResponseDto> RefreshTokenAsync(RefreshTokenModel request, CancellationToken cancellationToken)
+    public Task<AuthenticationResponseModel> RefreshTokenAsync(RefreshTokenModel request, CancellationToken cancellationToken)
         => mediator.Send(new OnRefreshToken(request.RefreshToken), cancellationToken);
 
 
@@ -79,20 +75,13 @@ public class AuthController
 
 
     [HttpPost]
-    public Task<EveryEngUserToken> IsEmailTaken([FromBody] EmailModel model, CancellationToken cancellationToken) => mediator.Send(new IsEmailValid(model.UserEmail), cancellationToken);
+    public Task<UserToken> IsEmailTaken([FromBody] EmailModel model, CancellationToken cancellationToken) => mediator.Send(new IsEmailValid(model.UserEmail), cancellationToken);
 
     [HttpPost]
-    public Task<EveryEngUserToken> IsIdTaken([FromBody] IdRequestModel model, CancellationToken cancellationToken) => mediator.Send(new IsIdValid(model.UserId), cancellationToken);
+    public Task<UserToken> IsIdTaken([FromBody] IdRequestModel model, CancellationToken cancellationToken) => mediator.Send(new IsIdValid(model.UserId), cancellationToken);
 
-    [HttpPost]
-    public Task<bool> IsReferralCodeValid(string referralCode, CancellationToken cancellationToken)
-        => mediator.Send(new IsReferralCodeValid(referralCode), cancellationToken);
-
-    [HttpGet]
-    public async Task<PermissionDto> CreatePersmission([FromQuery] GetPermission request, CancellationToken cancellationToken)
-        => await mediator.Send(request, cancellationToken);
-
-
+    
+  
     [HttpPost("Password")]
     public Task ChangePassword(ChangePassword request, CancellationToken cancellationToken) => mediator.Send(request, cancellationToken);
 

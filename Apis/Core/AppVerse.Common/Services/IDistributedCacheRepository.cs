@@ -1,18 +1,17 @@
 ﻿namespace AppVerse.Services;
 
-public interface IDistributedCacheRepository
+public interface IRealTimeService
 {
-    Task<T> GetAsync<T>(string key, CancellationToken cancellationToken);
-    Task SetEntityAsync<T>(string key, T entity, TimeSpan expiryTime, CancellationToken cancellationToken);
-    Task SetLocalEntityAsync<T>(string key, T entity, TimeSpan expiryTime, CancellationToken cancellationToken);
-    Task SetLocalEntitiesAsync<T>(string key, IEnumerable<T> entities, TimeSpan expiryTime, CancellationToken cancellationToken);
+    Task SendMessage(string hubMethod, object?[] payload, CancellationToken cancellationToken);
+    Task StreamMessages<TEntity>(string hubMethod, Func<IAsyncEnumerable<TEntity>> stream, CancellationToken cancellationToken);
 
-    Task SetAsync<T>(string key, IEnumerable<T> entities, CancellationToken cancellationToken);
-
-    Task SetAsync<T>(string key, IEnumerable<T> entities, TimeSpan expiryTime, CancellationToken cancellationToken);
-
-    Task RemoveAll(string key, CancellationToken cancellationToken);
-
-    Task RemoveAll(List<string> key, CancellationToken cancellationToken);
-    Task RefreshCache(string key, CancellationToken cancellationToken);
+}
+public static class HubEventNames
+{
+    public const string DomainRecordUpdated = "OnRecordUpdated";
+    public const string RecordUpdated = "recordUpdated";
+    public const string SearchResultReceiver = "ReceiveSearchResult";
+    public const string SearchMetadata = "SearchMetadata";
+    public const string SendNotification = "SendNotification";
+    public const string CartUpdatedNotification = "CartUpdatedNotification";
 }

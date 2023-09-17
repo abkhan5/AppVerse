@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace AppVerse.Services.AzureMessaging;
 
-internal class AzureEntityManager 
+internal class AzureEntityManager : IQueueOperations
 {
     private readonly IConfiguration configuration;
 
@@ -62,7 +62,7 @@ internal class AzureEntityManager
 
     private ServiceBusAdministrationClient GetClient() =>
         new(serviceBusSettings.Value.ConnectionString);
-    // return new ServiceBusAdministrationClient("Endpoint=sb://everyengcommonservicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=k+TS7EnRcyyqEkoU7ATOU7V7/FoEwtpqbPKXpMvsWss=");
+    // return new ServiceBusAdministrationClient("Endpoint=sb://appversecommonservicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=k+TS7EnRcyyqEkoU7ATOU7V7/FoEwtpqbPKXpMvsWss=");
 
 
 

@@ -1,4 +1,5 @@
-﻿namespace AppVerse.Infrastructure.Events;
+﻿
+namespace AppVerse.Infrastructure.Events;
 
 public class UserDomainEvent : IDomainEvent
 {

@@ -1,5 +1,4 @@
-﻿using AppVerse.Emails;
-
+﻿
 namespace AppVerse.Domain.Authentication.CommandHandler;
 
 public class UserCommandHandler :
@@ -13,16 +12,13 @@ public class UserCommandHandler :
     private readonly IUserAuthenticationService authenticationService;
     private readonly IIdentityService identityService;
     private readonly IMessageSender messageSender;
-    private readonly IUserRepository userRepository;
 
     public UserCommandHandler(
         IMessageSender messageSender,
-        IUserRepository userRepository,
         IUserAuthenticationService authenticationService,
         IIdentityService identityService)
     {
         this.messageSender = messageSender;
-        this.userRepository = userRepository;
         this.authenticationService = authenticationService;
         this.identityService = identityService;
     }
@@ -41,7 +37,6 @@ public class UserCommandHandler :
             await SendEmailAsync(new CustomEmailDto
             {
                 Link = new ShortEmailActionLinkDto(await authenticationService.GetLoginLinkAsync()),
-                EmailTemplateCode = EssentialEmailsEnum.ChangePassword.GetEnumDescription(),
                 ProfileIds = new List<string> { user.Id }
             }, cancellationToken);
     }
@@ -49,10 +44,8 @@ public class UserCommandHandler :
     public async Task Handle(EmailConfirmation model, CancellationToken cancellationToken)
     {
         var user = await authenticationService.FindByEmailAsync(model.UserEmail);
-        await userRepository.ConfirmEmail(user.Id, cancellationToken);
         await SendEmailAsync(new CustomEmailDto
         {
-            EmailTemplateCode = EssentialEmailsEnum.ConfirmationLink.GetEnumDescription(),
             ProfileIds = new List<string> { user.Id }
         }, cancellationToken);
     }
@@ -63,7 +56,6 @@ public class UserCommandHandler :
         await SendEmailAsync(new CustomEmailDto
         {
             Link = new ShortEmailActionLinkDto(await authenticationService.GeneratePasswordResetTokenAsync(user)),
-            EmailTemplateCode = EssentialEmailsEnum.ForgotPassword.GetEnumDescription(),
             ProfileIds = new List<string> { user.Id }
         }, cancellationToken);
     }
@@ -79,7 +71,6 @@ public class UserCommandHandler :
 
         await SendEmailAsync(new CustomEmailDto
         {
-            EmailTemplateCode = EssentialEmailsEnum.ResetPassword.GetEnumDescription(),
             ProfileIds = new List<string> { user.Id }
         }, cancellationToken);
     }
@@ -91,7 +82,6 @@ public class UserCommandHandler :
         await SendEmailAsync(new CustomEmailDto
         {
             Link = new ShortEmailActionLinkDto(await authenticationService.GenerateSignupLink(user)),
-            EmailTemplateCode = EssentialEmailsEnum.ResendConfirmation.GetEnumDescription(),
             ProfileIds = new List<string> { user.Id }
         }, cancellationToken);
     }

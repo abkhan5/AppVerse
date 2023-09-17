@@ -1,4 +1,5 @@
-﻿using Azure.Core;
+﻿using AppVerse;
+using Azure.Core;
 using Azure.Extensions.AspNetCore.Configuration.Secrets;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
@@ -22,8 +23,9 @@ public static class ProgramStartupExtensions
         builder.ConfigureServices((context, services) =>
         {
             var config = context.Configuration;
-            var everyEngStartup = new T();
-            everyEngStartup.ConfigureServices(services, config);
+            var appverseStartup = new T();
+            appverseStartup.ConfigureServices(services, config);
+            services.AddApplicationProfile();
         });
 
         var app = builder.Build();
@@ -32,27 +34,25 @@ public static class ProgramStartupExtensions
     }
     private static async Task RunHost<T>(this T app) where T : IHost
     {
-        await app.Services.SaveApplicationProfile();
         await app.RunAsync();
     }
 
     public static async Task RunWebHost<T>(this WebApplicationBuilder builder) where T : IAppVerseStartup, new()
     {
         Log.Logger.Information($"Current Env is {builder.Environment.EnvironmentName}");
-        builder.Host.ConfigureEveryEngHost();
-        var everyEngStartup = new T();
-        everyEngStartup.ConfigureServices(builder.Services, builder.Configuration);
+        builder.Host.ConfigureappverseHost();
+        var appverseStartup = new T();
+        appverseStartup.ConfigureServices(builder.Services, builder.Configuration);
+        builder.Services.AddApplicationProfile();
         builder.AddKestrelExtensions();
         var app = builder.Build();
-        if (app.Environment.IsDevelopment())
-            app.AddSwaggerUI();
-        everyEngStartup.ConfigureApplication(app);
+        appverseStartup.ConfigureApplication(app);
         app.MapControllers();
         await app.RunHost();
     }
 
 
-    public static IHostBuilder ConfigureEveryEngHost(this IHostBuilder host) =>
+    public static IHostBuilder ConfigureappverseHost(this IHostBuilder host) =>
         host
         .UseSerilog()
         .ConfigureAppConfiguration((hostingContext, config) => GetConfiguration(hostingContext.HostingEnvironment, config));
@@ -61,8 +61,7 @@ public static class ProgramStartupExtensions
     private static void GetConfiguration(IHostEnvironment hostingContext, IConfigurationBuilder appConfig)
     {
         var builder = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json", false, true)
-            .AddJsonFile("everyengsetting.json", false, true)
+            .AddJsonFile("appverseappsettings.json", false, true)
             .AddEnvironmentVariables();
         var config = builder.Build();
         appConfig.AddConfiguration(config);
@@ -88,7 +87,7 @@ public static class ProgramStartupExtensions
             VisualStudioTenantId = tenantId,
             SharedTokenCacheTenantId = tenantId,
             ManagedIdentityClientId = managedId
-        }) : new ManagedIdentityCredential(clientId: managedId); ;
+        }) : new ManagedIdentityCredential(clientId: managedId); 
 
         var options = new AzureKeyVaultConfigurationOptions
         {
@@ -110,4 +109,21 @@ public static class ProgramStartupExtensions
     {
         options.AddServerHeader = false;
     }
+
+    private static void AddApplicationProfile(this IServiceCollection services)
+    {
+        services.AddSingleton(sp =>
+        {
+            return new ApplicationProfile
+            {
+                Id = ApplicationName,
+                AppName = ApplicationName,
+                UserId = Environment.MachineName,
+                MachineName = Environment.MachineName,
+                CreatedOn = DateTime.UtcNow,
+                ApplicationName = ApplicationName
+            };
+        });
+    }
+
 }

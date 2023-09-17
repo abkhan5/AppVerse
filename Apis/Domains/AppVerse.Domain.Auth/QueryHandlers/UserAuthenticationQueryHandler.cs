@@ -1,10 +1,12 @@
 ﻿
 
+using AppVerse.Models;
+
 namespace AppVerse.Domain.Authentication.QueryHandlers;
 public class UserAuthenticationQueryHandler :
-    IQueryHandler<OnRefreshToken, AuthenticationResponseDto>,
-    IQueryHandler<LoginEveryEngUser, AuthenticationResponseDto>,
-    IQueryHandler<ValidateOtp, AuthenticationResponseDto>,
+    IQueryHandler<OnRefreshToken, AuthenticationResponseModel>,
+    IQueryHandler<LoginappverseUser, AuthenticationResponseModel>,
+    IQueryHandler<ValidateOtp, AuthenticationResponseModel>,
     IQueryHandler<LoginRequest, string>
 {
     private readonly IUserAuthenticationService authenticationService;
@@ -23,7 +25,7 @@ public class UserAuthenticationQueryHandler :
     }
 
 
-    public async Task<AuthenticationResponseDto> Handle(LoginEveryEngUser request, CancellationToken cancellationToken)
+    public async Task<AuthenticationResponseModel> Handle(LoginappverseUser request, CancellationToken cancellationToken)
     {
         var user = await authenticationService.FindByNameAsync(request.UserName);
         await mediator.Publish(new UserDomainEvent("Login", "EmailLogin", user.Id), cancellationToken);
@@ -31,7 +33,7 @@ public class UserAuthenticationQueryHandler :
     }
 
 
-    public async Task<AuthenticationResponseDto> Handle(OnRefreshToken request, CancellationToken cancellationToken)
+    public async Task<AuthenticationResponseModel> Handle(OnRefreshToken request, CancellationToken cancellationToken)
     {
         var refreshToken = await context.Set<RefreshToken>().Include(item => item.Profile)
             .SingleAsync(u => u.Token == request.RefreshToken, cancellationToken);
@@ -42,9 +44,9 @@ public class UserAuthenticationQueryHandler :
         return await GetAuthenitcationResponse(user, cancellationToken);
     }
 
-    public async Task<AuthenticationResponseDto> Handle(ValidateOtp request, CancellationToken cancellationToken)
+    public async Task<AuthenticationResponseModel> Handle(ValidateOtp request, CancellationToken cancellationToken)
     {
-        var user = await context.Set<EveryEngUser>().FirstOrDefaultAsync(item => item.PhoneNumber == request.PhoneNumber, cancellationToken);
+        var user = await context.Set<AppVerseUser>().FirstOrDefaultAsync(item => item.PhoneNumber == request.PhoneNumber, cancellationToken);
         await mediator.Publish(new UserDomainEvent("Login", "OtpLogin", user.Id), cancellationToken);
         return await GetAuthenitcationResponse(user, cancellationToken);
     }
@@ -56,7 +58,7 @@ public class UserAuthenticationQueryHandler :
         return requestKey;
     }
 
-    private async Task<AuthenticationResponseDto> GetAuthenitcationResponse(EveryEngUser user, CancellationToken cancellationToken)
+    private async Task<AuthenticationResponseModel> GetAuthenitcationResponse(AppVerseUser user, CancellationToken cancellationToken)
     {
         await authenticationService.ResetAccessFailedCountAsync(user);
         var principal = await authenticationService.CreatePrincipalAsync(user);

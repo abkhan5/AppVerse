@@ -1,12 +1,45 @@
-﻿namespace Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
+
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class AppverDependencies
 {
     public static void AddAppVerseDependencies(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddCacheService(configuration);
         services.AddAppAuthentication(configuration);
         services.AddAppVerseDbContext(configuration);
         services.AddApiControllers();
+        services.AddAzureMessagingServices(configuration);
+        services.AddAzureOtpService(configuration);
+        services.AddCacheService(configuration);
+        services.AddMemoryCache();
+        services.AddAzureBlobStore(configuration);
+
+
+
+        services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
+        services.AddResponseCompression(options =>
+        {
+            options.EnableForHttps = true;
+            options.Providers.Add<BrotliCompressionProvider>();
+            options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "application/octet-stream" });
+        }).Configure<BrotliCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; });
+        services.AddCors();
+       
+        services.AddCosmosDbRepository(configuration);
+        services.AddResponseCaching();
+        services.AddRealTimeService(configuration);
+        services.AddDistributedMemoryCache();
+        services.AddAzureEmailService(configuration);
+        services.AddCalenderService(configuration);
+        services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            options.ForwardedHeaders =
+                ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+        });
+        services.AddMemoryCache();
     }
 
     internal static void ConfigureAntiforgery(this IApplicationBuilder app)

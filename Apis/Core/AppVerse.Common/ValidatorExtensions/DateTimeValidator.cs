@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace EveryEng;
+namespace AppVerse;
 
 public static class DateTimeValidator
 {

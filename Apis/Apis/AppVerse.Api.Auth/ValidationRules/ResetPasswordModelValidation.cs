@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-
+﻿
 namespace AppVerse.Api.Authentication.ValidationRules;
 
 public class ResetPasswordModelValidation : AbstractValidator<ResetPasswordModel>

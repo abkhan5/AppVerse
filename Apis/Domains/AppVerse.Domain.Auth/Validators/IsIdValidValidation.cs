@@ -9,10 +9,10 @@ public class IsIdValidValidation : AbstractValidator<IsIdValid>
         this.context = context;
         RuleFor(x => x.UserId).NotEmpty().NotNull().WithMessage("Can not be empty!");
         RuleFor(x => x.UserId).Must(IsValidInput).WithMessage("Email is not a valid email address!");
-        RuleFor(x => x.UserId).MustAsync(UserExists).WithErrorCode(EveryEngErrorRegistry.ErrorAuth103);
+        RuleFor(x => x.UserId).MustAsync(UserExists).WithErrorCode(AppVerseErrorRegistry.ErrorAuth103);
     }
     private async Task<bool> UserExists(string userLoginInput, CancellationToken cancellationToken)
-    => !await context.Set<EveryEngUser>().AnyAsync(item => item.PhoneNumber == userLoginInput || item.Email == userLoginInput, cancellationToken);
+    => !await context.Set<AppVerseUser>().AnyAsync(item => item.PhoneNumber == userLoginInput || item.Email == userLoginInput, cancellationToken);
 
 
     private bool IsValidInput(string inputString)

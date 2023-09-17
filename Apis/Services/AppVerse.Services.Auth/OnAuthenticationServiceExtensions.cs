@@ -63,7 +63,7 @@ internal static class OnAuthenticationServiceExtensions
                         // If the request is for our hub...
                         var path = context.HttpContext.Request.Path;
                         if (path.StartsWithSegments("/cop") || path.StartsWithSegments("/chat") ||
-                            path.StartsWithSegments("/everyenguser"))
+                            path.StartsWithSegments("/appverseuser"))
                             // Read the token out of the query string
                             if (!string.IsNullOrEmpty(accessToken))
                                 context.Token = accessToken;

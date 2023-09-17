@@ -49,11 +49,11 @@ public static class ExceptionMiddlewareExtensions
 
 
 
-    private static Dictionary<string, IEnumerable<string>> FormatValidationException(this Exception everyEngException)
+    private static Dictionary<string, IEnumerable<string>> FormatValidationException(this Exception appverseException)
     {
         return new Dictionary<string, IEnumerable<string>>
         {
-            [""] = new List<string> { everyEngException.Message }
+            [""] = new List<string> { appverseException.Message }
         };
     }
 

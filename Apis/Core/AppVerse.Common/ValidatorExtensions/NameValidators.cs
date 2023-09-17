@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 
 
-namespace EveryEng;
+namespace AppVerse;
 public static class StringValidator
 {
     public static IRuleBuilderOptions<T, DateTime> DateMustBeGreaterThanNowRule<T>(this IRuleBuilder<T, DateTime> ruleBuilder)

@@ -1,5 +1,4 @@
-﻿using AppVerse.Base;
-using System.Net;
+﻿using System.Net;
 
 namespace AppVerse.Services;
 

@@ -1,5 +1,5 @@
 ﻿global using Microsoft.AspNetCore.Identity;
-global using AppVerse.Base;
+
 global using System.Collections.ObjectModel;
 global using AppVerse.Services;
 global using Microsoft.Extensions.Configuration;

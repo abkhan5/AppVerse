@@ -1,5 +1,4 @@
 ﻿
-
 namespace AppVerse.Api.Authentication.Middleware.Google;
 
 public class GoogleAuthenticationHandler

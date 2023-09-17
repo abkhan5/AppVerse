@@ -1,9 +1,16 @@
-﻿using System.Text;
+﻿
+using System.Text;
 
 namespace AppVerse;
 
-
-public record BlobStorageItem
+public record ApplicationProfile : BaseDto
+{
+    public string AppName { get; set; }
+    public string BuildId { get; set; }
+    public string MachineName { get; set; }
+    public string ApplicationName { get; set; }
+}
+public record BlobStorageItemDto
 {
     public string FolderName { get; set; }
     private string containerName;

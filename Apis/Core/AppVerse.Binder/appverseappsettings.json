@@ -1,0 +1,108 @@
+{
+  "AzureDefaults": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "appverse.com",
+    "TenantId": "A123-456-f678-er544-343234",
+    "AppID": "ertyse-7058-6yg4-se3r-s3e3t",
+    "CallbackPath": "/signin-oidc",
+    "Diagnostics": {
+      "IsTelemetryDisabled": false,
+      "IsLoggingContentEnabled": true
+    },
+    "Retry": {
+      "MaxRetries": 3,
+      "Mode": "Exponential"
+    }
+  },
+  "AzureSqlStoreSettings": {
+    "AzureSqlConnectionString": "Data Source=.;Initial Catalog=AppVerseSqlDb;Trusted_Connection=True;TrustServerCertificate=True;"
+  },
+  "CosmosDbSettings": {
+    "Account": "https://localhost:8081",
+    "Key": "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
+    "DatabaseName": "AppVerseLocal",
+    "ContainerNames": "conference,profile"
+  },
+  "AzureRedisSettings": {
+    "ConnectionString": "appversedev.redis.cache.windows.net:6380,password=wGDyDswRNp4j5gvPO9mqA+RcidIl1FDEaZ+SrPEtcKw=,ssl=True,abortConnect=False",
+    "DatabaseName": "appversedev"
+  },
+  "AzureServiceBusSettings": {
+    "ConnectionString": "Endpoint=sb://appversedevservicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=4GT0KgMwODCCLSOTUmPvE8VAMH000X40xgZDlIAOaOc=",
+    "UseMachineName": "true"
+  },
+  "AzureBlobStoreSettings": {
+    "AppStore": {
+      "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=appverseassets;AccountKey=4NJ8DRgoS0T00uPk5dzrUhBbhROE2tAqgOga4U6v3xyBBOI8GvLGPmf3nNciox/1K951r19iop4W+AStZnWI1w==;EndpointSuffix=core.windows.net",
+      "Dns": "devappstore.appverse.com",
+      "StoreType": "AppStore"
+    },
+    "AzureAsset": {
+      "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=appverseassets;AccountKey=yRik4g5NpV5FB8jMLnKslVK1XvmsHS3ldLnnMHhd7akASZhHQgK88zkULKwocieV5rklpMNBMLDEU+t/v5g9VQ==;EndpointSuffix=core.windows.net",
+      "Dns": "assets.appverse.com",
+      "StoreType": "AzureAssets"
+    }
+  },
+  "AzureAssetStoreSettings": {
+    "AssetsConnectionString": "DefaultEndpointsProtocol=https;AccountName=appverseassets;AccountKey=yRik4g5NpV5FB8jMLnKslVK1XvmsHS3ldLnnMHhd7akASZhHQgK88zkULKwocieV5rklpMNBMLDEU+t/v5g9VQ==;EndpointSuffix=core.windows.net",
+    "AssetsContainerName": "domain",
+    "AssetsDns": "assets.appverse.com"
+  },
+  "AzureCommunicationSettings": {
+    "ConnectionString": "endpoint=https://appverse-acs-asia.communication.azure.com/;accesskey=tjbkLsL0vCHteRbpEyzDIApfUJOy4KAy71shLofzJvzWUCkb775i6sRKkfWTq2foDgpLm2wpxLVvVhlGcx2yzQ=="
+  },
+  "UserServiceSettings": {
+    "ServiceHost": "http://localhost:4200",
+    "ResetPasswordRoute": "auth/reset-password",
+    "VerifyAccountRoute": "auth/verify-account",
+    "NotificationServiceHost": "https://localhost:44390",
+    "MessengerHubServiceHost": "http://localhost:59816",
+    "AuthServiceHost": "https://localhost:44311",
+    "ConfirmationEmailPath": "api/Users/ConfirmEmailAddress"
+  },
+  "AzureSettings": {
+    "TenantId": "A123-456-f678-er544-343234",
+    "AppID": "ertyse-7058-6yg4-se3r-s3e3t",
+    "AppSecret": "PO9~y5d3_.LAfDxyulQBvP.0kI0xzm6.74",
+    "SubscriptionId": "sedrwer-yu-4799-ssdff-wer",
+    "Location": "centralindia",
+    "ResourceGroupName": "rg-dev",
+    "DnsResourceGroupName": "rg-dns"
+  },
+
+  "TenantId": "A123-456-f678-er544-343234",
+  "AppID": "ertyse-7058-6yg4-se3r-s3e3t",
+  "AppSecret": "AAAAAAA~oAAAAAAAAAA",
+  "AzureKeyVaultName": "devkeyazurevault",
+  "ManagedIdentityId": "666666666-6666-6666-6666-6666666666",
+
+  "JwtSettings": {
+    "Secret": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "TokenLifetime": "24:10:00",
+    "Issuer": "AppVerse.com",
+    "Audience": "AppVerse.com"
+  },
+  "SwaggerSettings": {
+    "JsonRoute": "swagger/{documentName}/swagger.json",
+    "Description": "Our API",
+    "UIEndpoint": "swagger.json"
+  },
+  "GoogleLoginCredentials": {
+    "ClientId": "AAAAAAAAA-AAAAAAAAAAAAAAA.apps.googleusercontent.com",
+    "ClientSecret": "GGGGGGGGG-r_QQQQQQQQQ-q"
+  },
+  "GoogleOptions": {
+    "ClientId": "77777777777-7777777777.apps.googleusercontent.com",
+    "ClientSecret": "AAAAAAAAAA-r_QQQQQQQQQQQ-q",
+    "RedirectUri": "http://localhost:4200/auth/signin-google",
+    "GrantType": "authorization_code",
+    "TokenEndpoint": "https://oauth2.googleapis.com/token",
+    "UserInformationEndpoint": "https://openidconnect.googleapis.com/v1/userinfo"
+  },
+  "ApplicationProfileSetting": {
+    "ApplicationName": "#{aksappname}#",
+    "BuildNumber": "#{Build.BuildId}#"
+  },
+  "UseVault": false,
+  "useMachineName": true
+}
