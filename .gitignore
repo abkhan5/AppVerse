@@ -365,3 +365,9 @@ FodyWeavers.xsd
 /.vs/slnx.sqlite
 /.vs/AppVerse/v17/.wsuo
 /.vs/VSWorkspaceState.json
+/.vs/*
+/Apis/.vs/Apis/DesignTimeBuild/.dtbcache.v2
+/Apis/.vs/Apis/v17/.futdcache.v2
+/Apis/.vs/Apis/v17/.suo
+/Apis/.vs/ProjectEvaluation/apis.metadata.v7.bin
+/Apis/.vs/ProjectEvaluation/apis.projects.v7.bin
