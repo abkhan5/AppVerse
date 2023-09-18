@@ -8,8 +8,6 @@ using FluentValidation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Graph;
-using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -23,7 +21,9 @@ public static class ProgramStartupExtensions
 
     public static async Task RunConsoleHost<T>(this IHostBuilder builder) where T : IAppVerseStartup, new()
     {
-        builder.ConfigureAppConfiguration((hostingContext, config) => GetConfiguration(hostingContext.HostingEnvironment, config));
+        builder.UseSerilog()
+        .ConfigureAppConfiguration((hostingContext, config) => GetConfiguration(hostingContext.HostingEnvironment, config));        
+
         builder.ConfigureServices((context, services) =>
         {
             var config = context.Configuration;
@@ -48,10 +48,14 @@ public static class ProgramStartupExtensions
         var appverseStartup = new T();
         appverseStartup.ConfigureServices(builder.Services, builder.Configuration);
         builder.Services.AddApplicationProfile();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
         builder.AddKestrelExtensions();
         var app = builder.Build();
         appverseStartup.ConfigureApplication(app);
         app.MapControllers();
+        app.UseSwagger();
+        app.UseSwaggerUI();
         await app.RunHost();
     }
 
@@ -76,7 +80,7 @@ public static class ProgramStartupExtensions
             .AddEnvironmentVariables();
         var config = builder.Build();
         appConfig.AddConfiguration(config);
-
+       AppVerseLoggerExtension.InitializeLogger(appConfig, ApplicationName);
         var useVault = config.GetValue("UseVault", false);
         if (useVault)
             appConfig.AddKeyVault(config);

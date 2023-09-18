@@ -1,10 +1,6 @@
 ﻿
 
 
-using AppVerse.Domain.Conference.Commands;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.OpenApi.Models;
-
 [assembly: ApiController]
 
 public class Startup : IAppVerseStartup
@@ -14,13 +10,7 @@ public class Startup : IAppVerseStartup
     {
         services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.JwtOptionsName));
         services.AddHttpClient();     
-        services.AddAppVerseDependencies(configuration);
-        services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen(c =>
-        {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth", Version = "v1" });
-            c.EnableAnnotations();
-        });
+        services.AddAppVerseDependencies(configuration);     
 
     }
 
@@ -28,10 +18,6 @@ public class Startup : IAppVerseStartup
     public void ConfigureApplication(IApplicationBuilder app)
     {
         app.ConfigureApp();    
-  
-
-        app.UseSwagger();
-        app.UseSwaggerUI();
     }
 
     public Type[] GetAppTypes() =>    

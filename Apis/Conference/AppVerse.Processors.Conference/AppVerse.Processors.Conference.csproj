@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AppVerse.Binder\AppVerse.Binder.csproj" />
+    <ProjectReference Include="..\..\Domains\AppVerse.Domain.Conference\AppVerse.Domain.Conference.csproj" />
   </ItemGroup>
 
 </Project>
