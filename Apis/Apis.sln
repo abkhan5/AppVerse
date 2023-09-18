@@ -17,29 +17,37 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Services.Auth", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{065240A6-98AA-4850-8A65-0138AE190EF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Api.Auth", "Apis\AppVerse.Api.Auth\AppVerse.Api.Auth.csproj", "{31AA5A77-D4A1-477D-96EA-A1946C922848}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Binder", "Core\AppVerse.Binder\AppVerse.Binder.csproj", "{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{56F67E12-18F4-40CD-A03A-EAD34D7DF191}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Domain.Auth", "Domains\AppVerse.Domain.Auth\AppVerse.Domain.Auth.csproj", "{C18676F9-9F92-4CF4-8C64-5B14D19B058C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Services.AzureMessaging", "Services\AppVerse.Services.AzureMessaging\AppVerse.Services.AzureMessaging.csproj", "{F002FC66-0B9E-4CA1-BFE3-B233CB5D55B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Conference.AzureRediss", "Datastore\AppVerse.Conference.AzureRediss\AppVerse.Conference.AzureRediss.csproj", "{966BF0FB-5E63-4923-9BD3-E7EBF89D0512}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Conference.AzureRediss", "Datastore\AppVerse.Conference.AzureRediss\AppVerse.Conference.AzureRediss.csproj", "{966BF0FB-5E63-4923-9BD3-E7EBF89D0512}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Services.AzureOtp", "Services\AppVerse.Services.AzureOtp\AppVerse.Services.AzureOtp.csproj", "{9C8147BF-2241-47CC-89F1-31DF2C893928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Services.AzureOtp", "Services\AppVerse.Services.AzureOtp\AppVerse.Services.AzureOtp.csproj", "{9C8147BF-2241-47CC-89F1-31DF2C893928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Conference.AzureBlobStore", "Datastore\AppVerse.Conference.AzureBlobStore\AppVerse.Conference.AzureBlobStore.csproj", "{0E5D53E2-406D-4B7B-BF48-59D82BC7EC9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Conference.AzureBlobStore", "Datastore\AppVerse.Conference.AzureBlobStore\AppVerse.Conference.AzureBlobStore.csproj", "{0E5D53E2-406D-4B7B-BF48-59D82BC7EC9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Conference.AzureCosmos", "Datastore\AppVerse.Conference.AzureCosmos\AppVerse.Conference.AzureCosmos.csproj", "{431B5FBB-9FD4-4B68-AE3B-6AA54571DA8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Conference.AzureCosmos", "Datastore\AppVerse.Conference.AzureCosmos\AppVerse.Conference.AzureCosmos.csproj", "{431B5FBB-9FD4-4B68-AE3B-6AA54571DA8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Services.RealtimeService", "Services\AppVerse.Services.RealtimeService\AppVerse.Services.RealtimeService.csproj", "{B6ABB31A-24E1-41E3-A84B-F28EA121FCCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Services.RealtimeService", "Services\AppVerse.Services.RealtimeService\AppVerse.Services.RealtimeService.csproj", "{B6ABB31A-24E1-41E3-A84B-F28EA121FCCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Services.AzureEmailService", "Services\AppVerse.Services.AzureEmailService\AppVerse.Services.AzureEmailService.csproj", "{145DC063-4F17-4EAC-9ED2-CD63EDB5247F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Services.AzureEmailService", "Services\AppVerse.Services.AzureEmailService\AppVerse.Services.AzureEmailService.csproj", "{145DC063-4F17-4EAC-9ED2-CD63EDB5247F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Service.MsOffice365", "Services\AppVerse.Service.MsOffice365\AppVerse.Service.MsOffice365.csproj", "{589BF115-80CA-49F6-8856-9370BBC48654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Service.MsOffice365", "Services\AppVerse.Service.MsOffice365\AppVerse.Service.MsOffice365.csproj", "{589BF115-80CA-49F6-8856-9370BBC48654}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Processors", "Processors", "{4A038B21-1BEB-464A-A404-C97E455CB1C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Api.Conference", "Conference\AppVerse.Api.Conference\AppVerse.Api.Conference.csproj", "{C89FBE6D-B972-44FD-B044-E140E0E5F2E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Processors.Conference", "Conference\AppVerse.Processors.Conference\AppVerse.Processors.Conference.csproj", "{8309AEE9-158D-42A2-ADD4-31AF200F5CE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Domain.Auth", "Auth\AppVerse.Domain.Auth\AppVerse.Domain.Auth.csproj", "{6693E43B-C585-4B2F-8861-D8331BBA2145}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppVerse.Api.Auth", "Auth\AppVerse.Api.Auth\AppVerse.Api.Auth.csproj", "{FEC2AF6E-E328-431B-8651-A05A66C89C6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVerse.Domain.Conference", "Domains\AppVerse.Domain.Conference\AppVerse.Domain.Conference.csproj", "{90BB9FAF-6225-4103-B793-D1568DDB7B2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,24 +74,12 @@ Global
 		{2479AE1C-BE3C-4165-8578-A49C387F96F1}.Dev|Any CPU.Build.0 = Debug|Any CPU
 		{2479AE1C-BE3C-4165-8578-A49C387F96F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2479AE1C-BE3C-4165-8578-A49C387F96F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31AA5A77-D4A1-477D-96EA-A1946C922848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31AA5A77-D4A1-477D-96EA-A1946C922848}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31AA5A77-D4A1-477D-96EA-A1946C922848}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
-		{31AA5A77-D4A1-477D-96EA-A1946C922848}.Dev|Any CPU.Build.0 = Debug|Any CPU
-		{31AA5A77-D4A1-477D-96EA-A1946C922848}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31AA5A77-D4A1-477D-96EA-A1946C922848}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A}.Dev|Any CPU.Build.0 = Debug|Any CPU
 		{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C18676F9-9F92-4CF4-8C64-5B14D19B058C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C18676F9-9F92-4CF4-8C64-5B14D19B058C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C18676F9-9F92-4CF4-8C64-5B14D19B058C}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
-		{C18676F9-9F92-4CF4-8C64-5B14D19B058C}.Dev|Any CPU.Build.0 = Debug|Any CPU
-		{C18676F9-9F92-4CF4-8C64-5B14D19B058C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C18676F9-9F92-4CF4-8C64-5B14D19B058C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F002FC66-0B9E-4CA1-BFE3-B233CB5D55B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F002FC66-0B9E-4CA1-BFE3-B233CB5D55B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F002FC66-0B9E-4CA1-BFE3-B233CB5D55B0}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
@@ -132,6 +128,36 @@ Global
 		{589BF115-80CA-49F6-8856-9370BBC48654}.Dev|Any CPU.Build.0 = Debug|Any CPU
 		{589BF115-80CA-49F6-8856-9370BBC48654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{589BF115-80CA-49F6-8856-9370BBC48654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C89FBE6D-B972-44FD-B044-E140E0E5F2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C89FBE6D-B972-44FD-B044-E140E0E5F2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C89FBE6D-B972-44FD-B044-E140E0E5F2E4}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{C89FBE6D-B972-44FD-B044-E140E0E5F2E4}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{C89FBE6D-B972-44FD-B044-E140E0E5F2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C89FBE6D-B972-44FD-B044-E140E0E5F2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8309AEE9-158D-42A2-ADD4-31AF200F5CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8309AEE9-158D-42A2-ADD4-31AF200F5CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8309AEE9-158D-42A2-ADD4-31AF200F5CE2}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{8309AEE9-158D-42A2-ADD4-31AF200F5CE2}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{8309AEE9-158D-42A2-ADD4-31AF200F5CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8309AEE9-158D-42A2-ADD4-31AF200F5CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6693E43B-C585-4B2F-8861-D8331BBA2145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6693E43B-C585-4B2F-8861-D8331BBA2145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6693E43B-C585-4B2F-8861-D8331BBA2145}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{6693E43B-C585-4B2F-8861-D8331BBA2145}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{6693E43B-C585-4B2F-8861-D8331BBA2145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6693E43B-C585-4B2F-8861-D8331BBA2145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC2AF6E-E328-431B-8651-A05A66C89C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC2AF6E-E328-431B-8651-A05A66C89C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC2AF6E-E328-431B-8651-A05A66C89C6F}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC2AF6E-E328-431B-8651-A05A66C89C6F}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{FEC2AF6E-E328-431B-8651-A05A66C89C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC2AF6E-E328-431B-8651-A05A66C89C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BB9FAF-6225-4103-B793-D1568DDB7B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BB9FAF-6225-4103-B793-D1568DDB7B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BB9FAF-6225-4103-B793-D1568DDB7B2E}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BB9FAF-6225-4103-B793-D1568DDB7B2E}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{90BB9FAF-6225-4103-B793-D1568DDB7B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BB9FAF-6225-4103-B793-D1568DDB7B2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,9 +166,7 @@ Global
 		{5B8EDB44-DFE4-42D1-A901-F68877467743} = {5A52C732-BC0C-483B-A5F6-7546C53ED3FE}
 		{7B5EB7C2-1867-4B70-AD82-486DA68FB79C} = {BAD27FC8-ADA6-48B0-8BD8-AE548DD1FFCF}
 		{2479AE1C-BE3C-4165-8578-A49C387F96F1} = {AB8A583D-266E-4151-98F0-40F611FE3051}
-		{31AA5A77-D4A1-477D-96EA-A1946C922848} = {065240A6-98AA-4850-8A65-0138AE190EF8}
 		{4BEFB21D-5E3F-4E53-8DE7-0BCE00E3096A} = {5A52C732-BC0C-483B-A5F6-7546C53ED3FE}
-		{C18676F9-9F92-4CF4-8C64-5B14D19B058C} = {56F67E12-18F4-40CD-A03A-EAD34D7DF191}
 		{F002FC66-0B9E-4CA1-BFE3-B233CB5D55B0} = {AB8A583D-266E-4151-98F0-40F611FE3051}
 		{966BF0FB-5E63-4923-9BD3-E7EBF89D0512} = {BAD27FC8-ADA6-48B0-8BD8-AE548DD1FFCF}
 		{9C8147BF-2241-47CC-89F1-31DF2C893928} = {AB8A583D-266E-4151-98F0-40F611FE3051}
@@ -151,6 +175,11 @@ Global
 		{B6ABB31A-24E1-41E3-A84B-F28EA121FCCC} = {AB8A583D-266E-4151-98F0-40F611FE3051}
 		{145DC063-4F17-4EAC-9ED2-CD63EDB5247F} = {AB8A583D-266E-4151-98F0-40F611FE3051}
 		{589BF115-80CA-49F6-8856-9370BBC48654} = {AB8A583D-266E-4151-98F0-40F611FE3051}
+		{C89FBE6D-B972-44FD-B044-E140E0E5F2E4} = {065240A6-98AA-4850-8A65-0138AE190EF8}
+		{8309AEE9-158D-42A2-ADD4-31AF200F5CE2} = {4A038B21-1BEB-464A-A404-C97E455CB1C1}
+		{6693E43B-C585-4B2F-8861-D8331BBA2145} = {56F67E12-18F4-40CD-A03A-EAD34D7DF191}
+		{FEC2AF6E-E328-431B-8651-A05A66C89C6F} = {065240A6-98AA-4850-8A65-0138AE190EF8}
+		{90BB9FAF-6225-4103-B793-D1568DDB7B2E} = {56F67E12-18F4-40CD-A03A-EAD34D7DF191}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D24F3DEB-90F9-47AE-8A6F-A7D62AD589DC}

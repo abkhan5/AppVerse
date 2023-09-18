@@ -1,15 +1,14 @@
 ﻿global using Microsoft.AspNetCore.Identity;
-
-global using System.Collections.ObjectModel;
+global using AppVerse.Service.Authentication.Middleware.Google;
+global using AppVerse.Service.Authentication.Middleware.LinkedIn;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.Extensions.Primitives;
 global using AppVerse.Services;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Options;
 global using AppVerse.Conference.MsSql.Entity;
 global using Microsoft.EntityFrameworkCore;
-global using AppVerse.Conference.MsSql.EntityMapping;
-global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-global using Microsoft.EntityFrameworkCore.ChangeTracking;
 global using AppVerse.Service.Authentication;
 global using Microsoft.AspNetCore.DataProtection;
 global using Microsoft.Extensions.Logging;
@@ -27,3 +26,7 @@ global using System.Text;
 global using System.Globalization;
 global using Microsoft.AspNetCore.Authentication;
 global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using System.ComponentModel.DataAnnotations; 
+global using AppVerse.Service.Authentication.Models;
+global using System.Diagnostics.CodeAnalysis;
+global using System.Text.Json;

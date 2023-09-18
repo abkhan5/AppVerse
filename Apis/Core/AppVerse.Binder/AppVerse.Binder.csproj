@@ -18,11 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Auth\AppVerse.Domain.Auth\AppVerse.Domain.Auth.csproj" />
     <ProjectReference Include="..\..\Datastore\AppVerse.Conference.AzureBlobStore\AppVerse.Conference.AzureBlobStore.csproj" />
     <ProjectReference Include="..\..\Datastore\AppVerse.Conference.AzureCosmos\AppVerse.Conference.AzureCosmos.csproj" />
     <ProjectReference Include="..\..\Datastore\AppVerse.Conference.AzureRediss\AppVerse.Conference.AzureRediss.csproj" />
     <ProjectReference Include="..\..\Datastore\AppVerse.Conference.MsSql\AppVerse.Conference.MsSql.csproj" />
-    <ProjectReference Include="..\..\Domains\AppVerse.Domain.Auth\AppVerse.Domain.Auth.csproj" />
     <ProjectReference Include="..\..\Services\AppVerse.Service.MsOffice365\AppVerse.Service.MsOffice365.csproj" />
     <ProjectReference Include="..\..\Services\AppVerse.Services.Auth\AppVerse.Services.Auth.csproj" />
     <ProjectReference Include="..\..\Services\AppVerse.Services.AzureEmailService\AppVerse.Services.AzureEmailService.csproj" />

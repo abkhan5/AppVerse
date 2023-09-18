@@ -1,19 +1,13 @@
 ﻿
 namespace AppVerse;
-
-public record UserProfileImagesDto : BaseDto
+public record UserProfileDto:BaseDto
 {
-    public UserProfileImagesDto()
-    {
-
-    }
-    public UserProfileImagesDto(string userId, string profileUrl)
-    {
-        Id = userId;
-        UserId = userId;
-        CreatedOn = DateTime.UtcNow;
-        ProfileUrl = profileUrl;
-    }
-
+    public string DisplayName { get; set; }
     public string ProfileUrl { get; set; }
+}
+
+public record SmartContentDto
+{
+    public string PlainText { get; set; }
+    public string Content { get; set; }
 }

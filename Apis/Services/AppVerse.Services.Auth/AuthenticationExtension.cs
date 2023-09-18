@@ -1,9 +1,17 @@
 ﻿
+
+
 namespace Microsoft.Extensions.DependencyInjection;
 public static class AuthenticationExtension
 {
     public static void AddAppAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
+        services.Configure<GoogleLoginCredentialsSettings>(
+         configuration.GetSection(GoogleLoginCredentialsSettings.GoogleLoginCredentialsOptions));
+
+        services.Configure<GoogleAuthenticationOptions>(
+            configuration.GetSection(GoogleAuthenticationOptions.OptionName));
+
         services.AddTransient<IIdentityService, IdentityService>();
         services.AddTransient<IUserStore<AppVerseUser>, ProfileUserStore>();
         services.AddTransient<JwtTokenGenerator>();

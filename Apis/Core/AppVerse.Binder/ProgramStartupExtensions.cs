@@ -1,11 +1,15 @@
 ﻿using AppVerse;
+using AppVerse.Infrastructure.Events;
 using Azure.Core;
 using Azure.Extensions.AspNetCore.Configuration.Secrets;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
+using FluentValidation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Graph;
+using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -51,6 +55,13 @@ public static class ProgramStartupExtensions
         await app.RunHost();
     }
 
+    public static void AddTypes(this IServiceCollection services, IAppVerseStartup startup)
+    {
+        var appTypes = startup.GetAppTypes().ToArray();
+        services.AddAutoMapper(appTypes);
+        services.ConfigureMediator(appTypes);
+        services.AddValidatorsFromAssemblies(appTypes.Select(item=> item.Assembly));
+    }
 
     public static IHostBuilder ConfigureappverseHost(this IHostBuilder host) =>
         host
