@@ -2,7 +2,7 @@
 namespace AppVerse.Api.Conference.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]/[action]")]
 public class ConferenceController : ControllerBase
 {
 

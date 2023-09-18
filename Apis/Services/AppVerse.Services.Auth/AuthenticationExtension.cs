@@ -6,6 +6,8 @@ public static class AuthenticationExtension
 {
     public static void AddAppAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
+        services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.JwtOptionsName));
+
         services.Configure<GoogleLoginCredentialsSettings>(
          configuration.GetSection(GoogleLoginCredentialsSettings.GoogleLoginCredentialsOptions));
 

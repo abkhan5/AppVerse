@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
 
 namespace Microsoft.Extensions.DependencyInjection;
-
 public static class ProgramStartupExtensions
 {
     internal static string ApplicationName;
@@ -19,23 +18,7 @@ public static class ProgramStartupExtensions
         ApplicationName = appName;
     }
 
-    public static async Task RunConsoleHost<T>(this IHostBuilder builder) where T : IAppVerseStartup, new()
-    {
-        builder.UseSerilog()
-        .ConfigureAppConfiguration((hostingContext, config) => GetConfiguration(hostingContext.HostingEnvironment, config));        
-
-        builder.ConfigureServices((context, services) =>
-        {
-            var config = context.Configuration;
-            var appverseStartup = new T();
-            appverseStartup.ConfigureServices(services, config);
-            services.AddApplicationProfile();
-        });
-
-        var app = builder.Build();
-        await app.RunHost();
-
-    }
+  
     private static async Task RunHost<T>(this T app) where T : IHost
     {
         await app.RunAsync();
@@ -47,15 +30,14 @@ public static class ProgramStartupExtensions
         builder.Host.ConfigureappverseHost();
         var appverseStartup = new T();
         appverseStartup.ConfigureServices(builder.Services, builder.Configuration);
+        builder.Services.AddSwagerDefinition(ApplicationName);
         builder.Services.AddApplicationProfile();
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+
         builder.AddKestrelExtensions();
         var app = builder.Build();
-        appverseStartup.ConfigureApplication(app);
-        app.MapControllers();
         app.UseSwagger();
         app.UseSwaggerUI();
+        appverseStartup.ConfigureApplication(app);
         await app.RunHost();
     }
 

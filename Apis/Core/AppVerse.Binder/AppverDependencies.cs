@@ -8,7 +8,6 @@ public static class AppverDependencies
     public static void AddAppVerseDependencies(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddCacheService(configuration);
-        services.AddAppAuthentication(configuration);
         services.AddAppVerseDbContext(configuration);
         services.AddApiControllers();
         services.AddAzureMessagingServices(configuration);
@@ -16,9 +15,6 @@ public static class AppverDependencies
         services.AddCacheService(configuration);
         services.AddMemoryCache();
         services.AddAzureBlobStore(configuration);
-
-
-
         services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
         services.AddResponseCompression(options =>
         {
@@ -40,6 +36,8 @@ public static class AppverDependencies
                 ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
         });
         services.AddMemoryCache();
+        services.AddAppAuthentication(configuration);
+
     }
 
     internal static void ConfigureAntiforgery(this IApplicationBuilder app)
@@ -115,10 +113,10 @@ public static class AppverDependencies
                 .AllowAnyMethod()
                 .AllowCredentials();
         });
+        app.UseResponseCaching();
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
-        app.UseResponseCaching();
         app.UseForwardedHeaders(new ForwardedHeadersOptions
         {
             ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
